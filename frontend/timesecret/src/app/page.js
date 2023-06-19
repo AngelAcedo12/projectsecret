@@ -31,7 +31,7 @@ export default function Home() {
                <h1 className="font-normal text-lg sm:text-3xl text-center md:w-1/3 w-full sm:w-1/2 sm:hover:w-full
                 sm:hover:bg-slate-600 py-3 sm:p-3 
                  rounded-lg  transition-all 
-               duration-500 cursor-pointer ">TemporalSecrets</h1>
+               duration-500 cursor-pointer ">TEMPORALSECRETS</h1>
             </div>
               <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
                items-center content-center    max-h-full w-full max-w-full">
