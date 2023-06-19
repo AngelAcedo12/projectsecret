@@ -35,9 +35,9 @@ export default function Home() {
             </div>
               <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
                items-center content-center    max-h-full w-full max-w-full">
-                <a className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
+                <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
                duration-500 cursor-pointer" >Instagram</a>
-                <a href="" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
+                <a href="https://twitter.com/temporalsecrets" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
                duration-500 cursor-pointer">Twitter</a>
               </div>
           </nav>
@@ -65,7 +65,6 @@ export default function Home() {
                 <h1 className="md:text-2xl  sm:w-1/2 w-full transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
                  p-3 lg:text-3xl text-lg py-6" >{timeFin.h} : {timeFin.m} : {timeFin.s}</h1>
               </div>
-
             </div>
 
         </main>
