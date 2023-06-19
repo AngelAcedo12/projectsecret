@@ -1,6 +1,6 @@
 "use client"
+import { Analytics } from '@vercel/analytics/react';
 import { useState } from "react";
-
 export default function Home() {
   let date = new Date();
   const [timeActual={year:date.getFullYear(),mont:date.getMonth(),day:date.getDate(),h:date.getHours(),m:date.getMinutes(),s:date.getSeconds()}, setTime] = useState();
@@ -76,6 +76,7 @@ export default function Home() {
 
 
       </section>
+      <Analytics></Analytics>
     </>
 
 
