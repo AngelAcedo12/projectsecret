@@ -6,8 +6,15 @@ export default function Home() {
   const [timeActual={year:date.getFullYear(),mont:date.getMonth(),day:date.getDate(),h:date.getHours(),m:date.getMinutes(),s:date.getSeconds()}, setTime] = useState();
   const [timeFin={year:2024,mont:6,day:14,h:23,m:59,s:59}, setTimeFin] = useState();
   const UpdateTime = () => {
-
-    setTime({year:date.getFullYear(),mont:date.getMonth(),day:date.getDate(),h:date.getHours(),m:date.getMinutes(),s:date.getSeconds()});
+    var ha = date.getHours()
+    var ma = date.getMinutes()
+    var sa = date.getSeconds()
+    ma= date.getMinutes()
+ 
+    ha=ha<10 ? "0"+ha:ha
+    ma=ma<10 ? "0"+ma:ma
+    sa=sa<10 ? "0"+sa:sa
+    setTime({year:date.getFullYear(),mont:date.getMonth(),day:date.getDate(),h:ha,m:ma,s:sa});
 
   }
   setTimeout(() => {
@@ -21,34 +28,38 @@ export default function Home() {
         <header className="w-full">
           <nav className="flex flex-row p-3 justify-between">
             <div className="justify-start flex w-full items-center  content-center">
-               <h1 className="font-normal text-3xl text-center">TIME</h1>
+               <h1 className="font-normal text-3xl text-center hover:bg-slate-600 p-3 w-1/6 hover:w-1/2 rounded-lg ml-3 transition-all 
+               duration-500 cursor-pointer">TIME</h1>
             </div>
-
-
-              
-              <div className="flex justify-between items-center content-center text-center max-h-full w-full max-w-full">
-                <a className="">Instagram</a>
+              <div className="flex justify-center  text-center animate-fade-left
+               items-center content-center gap-4  max-h-full w-full max-w-full">
+                <a className="p-3 text-center w-1/6 rounded-lg hover:w-1/2 hover:bg-slate-600 transition-all 
+               duration-500 cursor-pointer" >Instagram</a>
+                <a href="" className="p-3 text-center w-1/6 rounded-lg  hover:w-1/2  hover:bg-slate-600 transition-all 
+               duration-500  cursor-pointer">Twitter</a>
               </div>
-
           </nav>
 
         </header>
-        <main className=" h-full max-h-screen items-center  w-full flex-col  flex " >
+        <main className=" h-full max-h-screen items-center p-5 w-full flex-col  flex " >
           <div className="h-52 items-center flex justify-center">
             <h1 className=" animate-pulse p-14  " >Proximamente...</h1>
           </div>
 
             <div className="flex flex-row  h-full w-full  justify-center ">
-              <div className="text-center flex-col gap-5 items-center w-full  flex justify-evenly">
-                <h1 className="text-4xl p-3">ACTUAL TIME </h1>
-                <h1 className="text-3xl w-1/2 py-6">{timeActual.year} - {timeActual.mont} - {timeActual.day}</h1>
-                <h1 className="w-1/2 py-6  text-3xl" >{timeActual.h} : {timeActual.m} : {timeActual.s}</h1>
+              <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly">
+
+                <h1 className="md:text-2xl w-1/2  transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                  p-3 lg:text-3xl text-lg  py-6">{timeActual.year} - {timeActual.mont} - {timeActual.day}</h1>
+                <h1 className="md:text-2xl w-1/2 transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                  p-3 lg:text-3xl text-lg py-6" >{timeActual.h} : {timeActual.m} : {timeActual.s}</h1>
               </div>
-              <div className="text-center flex-col gap-5 items-center w-full  flex justify-evenly">
-           
-                <h1 className="text-4xl p-3 ">? </h1>
-                <h1 className="text-3xl w-1/2 py-6">{timeFin.year} - {timeFin.mont} - {timeFin.day}</h1>
-                <h1 className="w-1/2 py-6  text-3xl" >{timeFin.h} : {timeFin.m} : {timeFin.s}</h1>
+              <span className="h-full w-1 bg-white"></span>
+              <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly">
+                <h1 className="md:text-2xl  w-1/2  transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                 p-3 lg:text-3xl text-lg  py-6">{timeFin.year} - {timeFin.mont} - {timeFin.day}</h1>
+                <h1 className="md:text-2xl w-1/2 transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                 p-3 lg:text-3xl text-lg py-6" >{timeFin.h} : {timeFin.m} : {timeFin.s}</h1>
               </div>
 
             </div>
