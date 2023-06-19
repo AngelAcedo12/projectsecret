@@ -26,23 +26,25 @@ export default function Home() {
       <section className="flex justify-between flex-col max-h-screen h-full w-full items-center
        content-center" >
         <header className="w-full">
-          <nav className="flex flex-row p-3 justify-between">
+          <nav className="flex flex-row p-3 gap-2 justify-between">
             <div className="justify-start flex w-full items-center  content-center">
-               <h1 className="font-normal text-3xl text-center md:w-1/3  sm:w-1/2 sm:hover:w-full sm:hover:bg-slate-600 p-3 w-1/6   rounded-lg ml-3 transition-all 
-               duration-500 cursor-pointer">TIME</h1>
+               <h1 className="font-normal text-lg sm:text-3xl text-center md:w-1/3 w-full sm:w-1/2 sm:hover:w-full
+                sm:hover:bg-slate-600 py-3 sm:p-3 
+                 rounded-lg  transition-all 
+               duration-500 cursor-pointer ">TemporalSecrets</h1>
             </div>
-              <div className="flex justify-around text-center animate-fade-left
+              <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
                items-center content-center    max-h-full w-full max-w-full">
-                <a className="p-3 text-center w-1/3  rounded-lg sm:hover:w-1/2 sm:hover:bg-slate-600 transition-all 
+                <a className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
                duration-500 cursor-pointer" >Instagram</a>
-                <a href="" className="p-3 text-center  w-1/3  rounded-lg  sm:hover:w-1/2  sm:hover:bg-slate-600 transition-all 
-               duration-500  cursor-pointer">Twitter</a>
+                <a href="" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
+               duration-500 cursor-pointer">Twitter</a>
               </div>
           </nav>
 
         </header>
-        <main className=" h-full max-h-screen items-center sm:p-5 w-full flex-col p-2  flex " >
-          <div className="h-52 items-center flex justify-center">
+        <main className=" h-full max-h-screen items-center sm:p-5 w-full flex-col px-2 pb-4 flex " >
+          <div className="h-48 items-center flex justify-center">
             <h1 className=" animate-pulse p-14  " >Proximamente...</h1>
           </div>
 
