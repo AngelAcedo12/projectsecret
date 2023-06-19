@@ -28,20 +28,20 @@ export default function Home() {
         <header className="w-full">
           <nav className="flex flex-row p-3 justify-between">
             <div className="justify-start flex w-full items-center  content-center">
-               <h1 className="font-normal text-3xl text-center hover:bg-slate-600 p-3 w-1/6 hover:w-1/2 rounded-lg ml-3 transition-all 
+               <h1 className="font-normal text-3xl text-center md:w-1/3  sm:w-1/2 sm:hover:w-full sm:hover:bg-slate-600 p-3 w-1/6   rounded-lg ml-3 transition-all 
                duration-500 cursor-pointer">TIME</h1>
             </div>
-              <div className="flex justify-center  text-center animate-fade-left
-               items-center content-center gap-4  max-h-full w-full max-w-full">
-                <a className="p-3 text-center w-1/6 rounded-lg hover:w-1/2 hover:bg-slate-600 transition-all 
+              <div className="flex justify-around text-center animate-fade-left
+               items-center content-center    max-h-full w-full max-w-full">
+                <a className="p-3 text-center w-1/3  rounded-lg sm:hover:w-1/2 sm:hover:bg-slate-600 transition-all 
                duration-500 cursor-pointer" >Instagram</a>
-                <a href="" className="p-3 text-center w-1/6 rounded-lg  hover:w-1/2  hover:bg-slate-600 transition-all 
+                <a href="" className="p-3 text-center  w-1/3  rounded-lg  sm:hover:w-1/2  sm:hover:bg-slate-600 transition-all 
                duration-500  cursor-pointer">Twitter</a>
               </div>
           </nav>
 
         </header>
-        <main className=" h-full max-h-screen items-center p-5 w-full flex-col  flex " >
+        <main className=" h-full max-h-screen items-center sm:p-5 w-full flex-col p-2  flex " >
           <div className="h-52 items-center flex justify-center">
             <h1 className=" animate-pulse p-14  " >Proximamente...</h1>
           </div>
@@ -49,16 +49,18 @@ export default function Home() {
             <div className="flex flex-row  h-full w-full  justify-center ">
               <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly">
 
-                <h1 className="md:text-2xl w-1/2  transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                <h1 className="md:text-2xl sm:w-1/2 w-full  transition-all  duration-500 rounded-lg
+                 hover:bg-slate-600  cursor-pointer
                   p-3 lg:text-3xl text-lg  py-6">{timeActual.year} - {timeActual.mont} - {timeActual.day}</h1>
-                <h1 className="md:text-2xl w-1/2 transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                <h1 className="md:text-2xl sm:w-1/2 w-full transition-all  duration-500 rounded-lg
+                 hover:bg-slate-600  cursor-pointer
                   p-3 lg:text-3xl text-lg py-6" >{timeActual.h} : {timeActual.m} : {timeActual.s}</h1>
               </div>
-              <span className="h-full w-1 bg-white"></span>
-              <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly">
-                <h1 className="md:text-2xl  w-1/2  transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+              <span className="h-full w-1 mx-2 bg-white"></span>
+              <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly" >
+                <h1 className="md:text-2xl sm:w-1/2  w-full transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
                  p-3 lg:text-3xl text-lg  py-6">{timeFin.year} - {timeFin.mont} - {timeFin.day}</h1>
-                <h1 className="md:text-2xl w-1/2 transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                <h1 className="md:text-2xl  sm:w-1/2 w-full transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
                  p-3 lg:text-3xl text-lg py-6" >{timeFin.h} : {timeFin.m} : {timeFin.s}</h1>
               </div>
 
