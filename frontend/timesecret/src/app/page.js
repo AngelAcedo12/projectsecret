@@ -30,15 +30,17 @@ export default function Home() {
           <nav className="flex flex-row p-3 gap-2 justify-between">
             <div className="justify-start flex w-full items-center  content-center">
                <h1 className="font-normal text-lg sm:text-3xl text-center md:w-1/3 w-full sm:w-1/2 sm:hover:w-full
-                sm:hover:bg-slate-600 py-3 sm:p-3 
+                sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300 py-3 sm:p-3 
                  rounded-lg  transition-all 
                duration-500 cursor-pointer ">TEMPORALSECRETS</h1>
             </div>
               <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
                items-center content-center    max-h-full w-full max-w-full">
-                <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
+                <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-sm sm:text-2xl text-center w-full 
+                sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
                duration-500 cursor-pointer" >Instagram</a>
-                <a href="https://twitter.com/temporalsecrets" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg sm:hover:w-full sm:hover:bg-slate-600 transition-all 
+                <a href="https://twitter.com/temporalsecrets" className="sm:p-3 text-sm sm:text-2xl text-center w-full sm:w-1/2 rounded-lg 
+                sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
                duration-500 cursor-pointer">Twitter</a>
               </div>
           </nav>
@@ -53,17 +55,17 @@ export default function Home() {
               <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly">
 
                 <h1 className="md:text-2xl sm:w-1/2 w-full  transition-all  duration-500 rounded-lg
-                 hover:bg-slate-600  cursor-pointer
+                 hover:bg-slate-300  dark:hover:bg-slate-600   cursor-pointer
                   p-3 lg:text-3xl text-lg  py-6">{timeActual.year} - {timeActual.mont} - {timeActual.day}</h1>
                 <h1 className="md:text-2xl sm:w-1/2 w-full transition-all  duration-500 rounded-lg
-                 hover:bg-slate-600  cursor-pointer
+                hover:bg-slate-300  dark:hover:bg-slate-600   cursor-pointer
                   p-3 lg:text-3xl text-lg py-6" >{timeActual.h} : {timeActual.m} : {timeActual.s}</h1>
               </div>
               <span className="h-full w-1 mx-2 bg-white"></span>
               <div className="text-center flex-col gap-3 items-center w-full  flex justify-evenly" >
-                <h1 className="md:text-2xl sm:w-1/2  w-full transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                <h1 className="md:text-2xl sm:w-1/2  w-full transition-all  duration-500 rounded-lg hover:bg-slate-300 dark:hover:bg-slate-600  cursor-pointer
                  p-3 lg:text-3xl text-lg  py-6">{timeFin.year} - {timeFin.mont} - {timeFin.day}</h1>
-                <h1 className="md:text-2xl  sm:w-1/2 w-full transition-all  duration-500 rounded-lg hover:bg-slate-600  cursor-pointer
+                <h1 className="md:text-2xl  sm:w-1/2 w-full transition-all  duration-500 rounded-lg hover:bg-slate-300  dark:hover:bg-slate-600  cursor-pointer
                  p-3 lg:text-3xl text-lg py-6" >{timeFin.h} : {timeFin.m} : {timeFin.s}</h1>
               </div>
             </div>
