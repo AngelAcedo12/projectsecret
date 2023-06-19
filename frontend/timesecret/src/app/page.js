@@ -1,16 +1,16 @@
 "use client"
-import { Analytics } from '@vercel/analytics/react';
+
+import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
 export default function Home() {
   let date = new Date();
-  const [timeActual={year:date.getFullYear(),mont:date.getMonth(),day:date.getDate(),h:date.getHours(),m:date.getMinutes(),s:date.getSeconds()}, setTime] = useState();
+  const [timeActual={year:null,mont:null,day:null,h:null,m:null,s:null}, setTime] = useState();
   const [timeFin={year:2024,mont:6,day:14,h:23,m:59,s:59}, setTimeFin] = useState();
   const UpdateTime = () => {
     var ha = date.getHours()
     var ma = date.getMinutes()
     var sa = date.getSeconds()
     ma= date.getMinutes()
- 
     ha=ha<10 ? "0"+ha:ha
     ma=ma<10 ? "0"+ma:ma
     sa=sa<10 ? "0"+sa:sa
@@ -19,7 +19,9 @@ export default function Home() {
   }
   setTimeout(() => {
     UpdateTime();
-  }, 100);
+  }, 150);
+
+  
   return (
     <>
      
@@ -76,7 +78,7 @@ export default function Home() {
 
 
       </section>
-
+      <Analytics mode='auto'></Analytics>
     </>
 
 
