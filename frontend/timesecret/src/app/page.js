@@ -28,7 +28,6 @@ export default function Home() {
               
               <div className="flex justify-between items-center content-center text-center max-h-full w-full max-w-full">
                 <a className="">Instagram</a>
-
               </div>
 
           </nav>
