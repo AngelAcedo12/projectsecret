@@ -1,5 +1,4 @@
 "use client"
-
 import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
 export default function Home() {
