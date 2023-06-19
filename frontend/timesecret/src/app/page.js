@@ -76,7 +76,7 @@ export default function Home() {
 
 
       </section>
-      <Analytics mode='auto'></Analytics>
+
     </>
 
 
