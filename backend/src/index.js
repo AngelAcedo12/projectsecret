@@ -16,7 +16,7 @@ app.use('/api/users', routeuser)
 
 
 app.listen(port, () => {
-    console.log(`listening at http://localhost:${port}`)
+    console.log(`listening at https://temporalsecretbackend.onrender.com`)
 })
 
 await dbConnect()
