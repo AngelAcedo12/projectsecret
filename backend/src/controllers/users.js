@@ -18,10 +18,10 @@ const createItem = async (req, res) => {
         const body = req.body
         const data = await usermodel.create(body)
         console.log("estroy por aquii")
-        return new Response.status(200).send(true)
+        res.status(200).send(true)
     }catch(err){
         console.log(err)
-        return new Response.status(200).send(false)
+        res.status(200).send(false)
     }
  
    
