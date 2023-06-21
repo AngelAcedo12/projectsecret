@@ -9,15 +9,23 @@ const getItem = async (req, res) => {
     console.log("obtener 1 item");
     const user = req.params.user
     const data = await usermodel.find({username:user})
-    res.send(data)
+    res.status(200).send(data)
 }
 
 const createItem = async (req, res) => {
     console.log("crear items");
-    const body = req.body
-    const data = await usermodel.create(body)
+    let response = false;
+    try{
+        const body = req.body
+        const data = await usermodel.create(body)
+        console.log("estroy por aquii")
+        return new Response.status(200).send(true)
+    }catch(err){
+        console.log(err)
+        return new Response.status(200).send(false)
+    }
+ 
    
-    res.send({data})
 }
 
 const updateItem = async (req, res) => {

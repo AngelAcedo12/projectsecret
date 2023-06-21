@@ -1,34 +1,42 @@
-const { createUser } = require("@/services/Users");
+import { createUser } from "@/services/Users";
+import { toast } from "react-toastify";
 
 
-function utilsRegisterUser(event){
-    const  datos = {
-        username: document.getElementById("usernameInput").value,
-        email: document.getElementById("emailInput").value,
-        password: document.getElementById("passwordInput").value,
-    }
+const crearUsuario = async () => {
 
-    const reg = async function () {
-        event.preventDefault();
-        
-        console.log(datos)
-        if(await createUser(datos)) {
-            console.log("qsdasda")
-            return true;
+   
+    let loading = false;
+    let response = false;
+    const resultCreater = async () => {
+        if (await createUser().then(res => res.json().then(data => {
+            console.log(data)
+          response=data
+        }
+        )).catch(err => {
+            console.log(err)
+        })) {
+         
+            loading=true;
         }else{
-            return false;
+            
+            loading=true;
         }
 
-        
+
 
     }
-    reg();
-  
+    console.log(loading)
+   await resultCreater()
+    if(loading==true){
+        toast("Completado", {type:"success" , theme: "colored" })
+        return response;
+    }else{
+        toast("Registrandote...", { type: "warning ", isLoading: loading, theme: "colored" })
+    }
     
-
 
 }
 
 export {
-    utilsRegisterUser
+    crearUsuario
 };
