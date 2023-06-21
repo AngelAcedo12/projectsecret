@@ -7,7 +7,7 @@ async function createUser(data){
    
     const postUser = async function (){
      console.log(username,password,email);
-        await fetch("http://localhost:3004/api/users", {
+        await fetch(`http://localhost:3001/api/users`, {
             method : "POST",
             mode : "cors",
             body:JSON.stringify({

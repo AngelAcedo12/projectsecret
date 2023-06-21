@@ -3,6 +3,7 @@ import { utilsRegisterUser } from "@/utils/RegisterUser";
 import { Analytics } from "@vercel/analytics/react";
 import { useState } from "react";
 import './globals.css';
+import { createUser } from "@/services/Users";
 
 export default function Home() {
   let date = new Date();
@@ -27,7 +28,6 @@ export default function Home() {
 
 
 
-  const { createUser } = require("@/services/Users");
 
 
   

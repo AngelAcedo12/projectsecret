@@ -5,20 +5,25 @@ const userSchema = new mongoose.Schema(
     {
         username:{
             type:String,
-            unique:true
+            unique:true,
+            require:true,
         },
         password:{
             type:String
         },
         email:{
             type:String,
-            unique:true
+            unique:true,
+            require:true,
         },
-        porVer:[
-            {
-                nombre: String
+        tokens:[{
+            
+                token:{
+                    provedor:String,
+                    token:String,
+                }
             }
-        ],
+        ]  
     },
     {
         versionKey:false,

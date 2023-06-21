@@ -16,7 +16,7 @@ const createItem = async (req, res) => {
     console.log("crear items");
     const body = req.body
     const data = await usermodel.create(body)
-    //const body = req.body; desestructuracion
+   
     res.send({data})
 }
 
