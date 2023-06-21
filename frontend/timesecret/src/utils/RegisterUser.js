@@ -25,9 +25,10 @@ const crearUsuario = async () => {
 
 
     }
-    console.log(loading)
+    toast("Registrandote...", { type: "warning ", isLoading: loading, theme: "colored" })
    await resultCreater()
     if(loading==true){
+        response=true;
         toast("Completado", {type:"success" , theme: "colored" })
         return response;
     }else{

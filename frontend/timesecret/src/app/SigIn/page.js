@@ -3,13 +3,14 @@ import { ToastContainer, toast } from "react-toastify";
 
 import { crearUsuario } from "@/utils/RegisterUser";
 import { useRouter } from "next/navigation";
+import 'react-toastify/dist/ReactToastify.css';
 export default function page() {
     const router = useRouter()
    const submit  = (e) => {
     e.preventDefault();
     const create = async() => {
 
-        if(await crearUsuario().then(res => {console.log(res) 
+        if(await crearUsuario().then(res => {
             return res})){
                 toast("Gracias por registrarte", {type:"default" ,autoClose:1500})
                 setInterval(() => {
