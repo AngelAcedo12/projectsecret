@@ -11,7 +11,7 @@ async function createUser(data){
         password: document.getElementById("passwordInput").value,
     }
 
-      return  await fetch(`http://localhost:3001/api/users`, {
+      return  await fetch(`https://temporalsecretbackend.onrender.com/api/users`, {
             method : "POST",
             mode : "cors",
             body:JSON.stringify({
