@@ -24,11 +24,7 @@ const userSchema = new mongoose.Schema(
                 }
             }
         ], 
-        mensajes:{
-            type:[MensajeSchema]
-            
-        },
-            
+      
 
         },
         
