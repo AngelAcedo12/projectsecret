@@ -14,7 +14,6 @@ const getItem = async (req, res) => {
 
 const createItem = async (req, res) => {
     console.log("crear items");
-    let response = false;
     try{
         const body = req.body
         const data = await usermodel.create(body)
