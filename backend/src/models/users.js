@@ -23,8 +23,17 @@ const userSchema = new mongoose.Schema(
                     token:String,
                 }
             }
-        ]  
-    },
+        ], 
+        mensajes:{
+            type:[MensajeSchema]
+            
+        },
+            
+
+        },
+        
+
+
     {
         versionKey:false,
         Timestamp:true
