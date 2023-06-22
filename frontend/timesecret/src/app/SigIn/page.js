@@ -2,6 +2,7 @@
 import { ToastContainer, toast } from "react-toastify";
 
 import { crearUsuario } from "@/utils/RegisterUser";
+import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css';
 export default function page() {
@@ -58,7 +59,7 @@ export default function page() {
                 </section>
             </main>
             <ToastContainer autoClose={1000} hideProgressBar={false} ></ToastContainer>
-
+            <Analytics mode='auto'></Analytics>
         </>
     )
 
