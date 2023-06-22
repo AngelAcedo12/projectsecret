@@ -64,9 +64,10 @@ export default function Home() {
         
             <div className="flex flex-col  h-1/2 w-full   justify-center ">
               <div  className="text-center cursor-default py-2 h-1/2 flex-row     items-center content-center   grid grid-flow-row " >
-                 
+                  
                    <h1 className="text-3xl sm:w-full w-full transition-all  duration-300 rounded-lg 
                  p-3   py-6">Proximamente..</h1>
+                 <h1>Tu tienes el control</h1>
               </div>
               <div className="text-center flex-col h-full py-4 items-center w-full gap-5 flex justify-center p-7 " >
                 
