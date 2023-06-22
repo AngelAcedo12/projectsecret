@@ -74,7 +74,7 @@ export default function Home() {
                  <h2 className="h-1/2">¡Registrate pulsado el boton de abajoo!</h2>
                  <a className=" text-lg  text-center items-center content-center
                   flex p-4 px-20 dark:hover:bg-slate-600 hover:bg-slate-300 rounded-lg transition-all  duration-300"
-                   href="./SigIn">Registrase</a>
+                   href="./SigIn">Registrarse</a>
 
               </div>
             </div> 
