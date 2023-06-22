@@ -23,8 +23,6 @@ const createItem = async (req, res) => {
         console.log(err)
         res.status(200).send(false)
     }
- 
-   
 }
 
 const updateItem = async (req, res) => {
