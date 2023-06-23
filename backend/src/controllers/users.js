@@ -14,8 +14,15 @@ const getItem = async (req, res) => {
 
 const createItem = async (req, res) => {
     console.log("crear items");
+    const [email, username,password] = req.body
+    const nuevoBody = {
+        email: email,
+        username: username,
+        password: await sencryptPassword(),
+    }
+    console.log(nuevoBody)
     try{
-        const body = req.body
+       
         const data = await usermodel.create(body)
         console.log("estroy por aquii")
         res.status(200).send(true)
