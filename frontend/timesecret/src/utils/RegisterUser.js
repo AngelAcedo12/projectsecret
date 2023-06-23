@@ -31,7 +31,7 @@ const crearUsuario = async () => {
         
         return response;
     }else{
-        toast("Registrandote...", { type: "warning ", isLoading: loading, theme: "colored" })
+      
     }
     
 

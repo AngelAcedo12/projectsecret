@@ -1,31 +1,37 @@
 import { userLogin } from "@/services/Users";
+
+import { setCookie } from "cookies-next";
+import { toast } from "react-toastify";
 import { comparePassword } from "./desencripter";
-const verifyUserLogin = async () => {
+const verifyUserLogin = async (datos) => {
+    toast("Verificando datos...", { type: "default",   theme: "colored" })
     let loading = false;
-    const datos = {
-        username: document.getElementById("usernameInput").value,
-        email: document.getElementById("emailInput").value,
-        password: document.getElementById("passwordInput").value,
-    }
+    let passwordEncrypter="";
+    let email = ""; 
+    let username = "";
+    let token = "";
     let resultado = []
-     resultado = await userLogin(datos.username).then(res =>  {
+    await userLogin(datos.username).then(res =>  {
         if (res.isEmtpy==false) {
             console.log("Ok")
             loading=true;
-            console.log(res)
-            res.data.map((ele ) => {
-                console.log(ele)
-                console.log(comparePassword(datos.password,ele.password))
-
+            token = res.token;
+            res.data.map((elemento) => {
+                console.log(elemento)
+                passwordEncrypter=elemento.password,
+                email= elemento.email,
+                username = elemento.username
+                
             })
-            return res.data        
+         
+           
 
 
         }else{
             loading=true;
-            console.log(res)
+            
             console.log("No")
-            return res.data;
+          
         }
 
 
@@ -34,8 +40,16 @@ const verifyUserLogin = async () => {
     
     )
 
-
-   
+    if(await comparePassword(datos.password, passwordEncrypter)){
+        setCookie('rt-user-login',`${token}`, {
+            maxAge: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
+        })
+        
+        return true;
+    }else{
+  
+        return false;
+    }
     
 
     
