@@ -13,7 +13,7 @@ app.use(express.json())
 const port = process.env.PORT || 8001;
 
 app.use('/api/users', routeuser)
-app.user('/api/mensajes', routerMensajes)
+app.use('/api/mensajes', routerMensajes)
 
 app.listen(port, () => {
     console.log(`listening at http://localhost:${port}`)
