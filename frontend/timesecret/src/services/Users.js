@@ -12,7 +12,7 @@ async function createUser(data) {
     }
     const uri = "https://temporalsecret1.onrender.com"
     const local = "http://localhost:3004"
-    return await fetch(url + '/api/users', {
+    return await fetch(uri + '/api/users', {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
