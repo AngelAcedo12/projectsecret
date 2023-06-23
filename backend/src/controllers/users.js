@@ -20,11 +20,11 @@ const createItem = async (req, res) => {
     const nuevoBody = {
         email: email,
         username: username,
-        password:  encryptPassword(password),
+        password:  await encryptPassword(password).then(res => res.json().then(data => {console.log(data) ; return data})),
     }
     console.log(nuevoBody)
     try{
-       
+
         const data = await usermodel.create(body)
         console.log("estroy por aquii")
         res.status(200).send(true)
