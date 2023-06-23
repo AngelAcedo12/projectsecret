@@ -11,8 +11,8 @@ async function createUser(data){
         email: document.getElementById("emailInput").value,
         password: document.getElementById("passwordInput").value,
     }
-        console.log(("https://temporalsecret1.onrender.com/api/users"))
-      return  await fetch((BACK_URI+"/api/users"), {
+     
+      return  await fetch("https://temporalsecret1.onrender.com/api/users"), {
             method : "POST",
             mode : "cors",
             body:JSON.stringify({
@@ -23,7 +23,7 @@ async function createUser(data){
                 "Content-type": "application/json; charset=UTF-8"
             },
             
-        })
+        }
 
                
         
