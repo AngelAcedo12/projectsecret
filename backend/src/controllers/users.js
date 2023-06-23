@@ -1,4 +1,5 @@
 import usermodel from "../models/users.js";
+import { encryptPassword } from "../utils/funcionesEncripter.js";
 
 const getItems = async (req, res) => {
     console.log("obtener items");
@@ -14,11 +15,12 @@ const getItem = async (req, res) => {
 
 const createItem = async (req, res) => {
     console.log("crear items");
+    const body = req.body;
     const [email, username,password] = req.body
     const nuevoBody = {
         email: email,
         username: username,
-        password: await sencryptPassword(),
+        password:  encryptPassword(password),
     }
     console.log(nuevoBody)
     try{
