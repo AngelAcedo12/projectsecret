@@ -16,17 +16,24 @@ const getItem = async (req, res) => {
 const createItem = async (req, res) => {
     console.log("crear items");
     const body = req.body;
-   
+    let {username,email,password} = body
+    const passwordEncrypted = await encryptPassword(password)
+    console.log(password)
+    const nuevoBody = {
+        username,
+        email,
+        password,
+    }
     try{
-
-        const data = await usermodel.create(body)
+        const data = await usermodel.create(nuevoBody)
         console.log("estroy por aquii")
         res.status(200).send(true)
     }catch(err){
         console.log(err)
         res.status(200).send(false)
     }
-}
+    
+}   
 
 const updateItem = async (req, res) => {
     const { username, idFilm } = req
