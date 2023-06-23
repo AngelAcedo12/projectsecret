@@ -17,12 +17,11 @@ const createItem = async (req, res) => {
     console.log("crear items");
     const body = req.body;
     let {username,email,password} = body
-    const passwordEncrypted = await encryptPassword(password)
-    console.log(password)
+
     const nuevoBody = {
         username,
         email,
-        passwordEncrypted,
+        password:await encryptPassword(password),
     }
     try{
         const data = await usermodel.create(nuevoBody)
