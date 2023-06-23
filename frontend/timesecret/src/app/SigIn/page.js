@@ -40,8 +40,6 @@ export default function page() {
 
 
             <main id="main" className="flex  h-full w-full">
-
-
                 <section className="flex justify-around flex-col max-h-screen h-full w-full items-center
                 content-center ">
 
