@@ -34,9 +34,7 @@ export default function Home() {
   return (
     <>
     
-    
-     <div className="h-full dark:scrollbar-track-black snap-y snap-center snap-mandatory dark:scrollbar-thumb-white  scrollbar-track-white scrollbar-thin overflow-y scrollbar-thumb-black ">
-      <header className="w-full relative top-0  ">
+    <header className="w-full fixed relative top-0  ">
             <nav className="flex flex-row  gap-2 justify-between py-3 p-1">
               <div className="justify-start flex w-full items-center  content-center">
                 <h1 className="font-normal text-lg sm:text-3xl text-center md:w-1/3 w-full sm:w-1/2
@@ -44,6 +42,8 @@ export default function Home() {
                   rounded-lg  transition-all 
                 duration-500 cursor-pointer animate-fade ">TEMPORALSECRETS</h1>
               </div>
+
+              
                 <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
                 items-center content-center    max-h-full w-full max-w-full">
                   <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
@@ -53,38 +53,36 @@ export default function Home() {
                   sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
                 duration-300 cursor-pointer ">Twitter</a>
                 </div>
-
             </nav>
-
           </header>
-      <section className="flex justify-between flex-col max-h-screen h-full w-full items-center
+     <div className="h-full overflow-scroll dark:scrollbar-track-black snap-y  scroll-smooth snap-proximity dark:scrollbar-thumb-white  scrollbar-track-white scrollbar-thin overflow-y scrollbar-thumb-black ">
+      
+      <section className="flex justify-between snap-end flex-col max-h-screen h-full w-full items-center
        content-center "  >
        
         <main className=" h-full max-h-screen items-center  animate-fade  w-full flex-col px-2 py-3 content-center justify-center flex " >
         
             <div className="flex flex-col  h-1/2 w-full   justify-center ">
-              <div  className="text-center cursor-default py-2 h-1/2 flex-row     items-center content-center   grid grid-flow-row " >
-                  
-                   <h1 className="text-3xl sm:w-full w-full transition-all  duration-300 rounded-lg 
-                 p-3   py-6">Proximamente..</h1>
-                 <h1>Tu tienes el control</h1>
-              </div>
-              <div className="text-center flex-col h-full py-4 items-center w-full gap-5 flex justify-center p-7 " >
+                     
+            <div className="h-full flex  flex-col items-center justify-center w-full gap-3 transition-all hover ">
+                <h1 className="w-full text-center text-4xl animate-fade animate-delay-[1000ms]"  >¿  ?</h1>
+                <p className="w-1/2 text-center animate-fade animate-delay-[1500ms]" >Tu tienes el control y tu decides que hacer con tus datos.
+La red social anonima y temporal. </p>
+            </div>
+              <div className="text-center flex-col h-full py-4 items-center w-full gap-2 flex justify-center p-7 animate-fade animate-delay-[2000ms] " >
                 
-                 <h2 className="h-1/2">¡Registrate pulsado el boton de abajoo!</h2>
-                 <a className=" text-lg  text-center items-center content-center
+                 <h2 className="h-1/2   ">¡Registrate pulsado el boton de abajoo!</h2>
+                 <a className=" text-lg  text-center items-center content-center border border-black  animate-fade animate-duration-[1700ms] dark:border-white
                   flex p-4 px-20 dark:hover:bg-slate-600 hover:bg-slate-300 rounded-lg transition-all  duration-300"
                    href="./SigIn">Registrarse</a>
-
               </div>
             </div> 
-       
+
 
         </main>
 
       </section>
- 
-  
+    
       </div>
      
       <Analytics mode='auto'></Analytics>
