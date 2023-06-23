@@ -10,8 +10,9 @@ async function createUser(data){
         email: document.getElementById("emailInput").value,
         password: document.getElementById("passwordInput").value,
     }
-
- return   await fetch(` https://temporalsecret1.onrender.com/api/users`, {
+    const uri = "https://temporalsecret1.onrender.com"
+    const local = "http://localhost:3004/"
+    return   await fetch(uri+'$/api/users', {
             method : "POST",
             mode : "cors",
             body:JSON.stringify({
@@ -32,9 +33,23 @@ async function createUser(data){
     
   
 }
+async function userLogin(){
+     
+    const  datos = {
+        username: document.getElementById("usernameInput").value,
+        email: document.getElementById("emailInput").value,
+        password: document.getElementById("passwordInput").value,
+    }
+
+
+    return await fetch('http://localhost:3004/api/users')
+
+
+}
 
 
 export {
-    createUser
-};
+    createUser,
+    userLogin
+}
 

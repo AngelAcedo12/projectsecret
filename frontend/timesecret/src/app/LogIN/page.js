@@ -1,43 +1,39 @@
 "use client"
-import { ToastContainer, toast } from "react-toastify";
-
-import { crearUsuario } from "@/utils/RegisterUser";
 import { Analytics } from "@vercel/analytics/react";
-import { useRouter } from "next/navigation";
-import 'react-toastify/dist/ReactToastify.css';
-export default function page() {
-    const router = useRouter()
-   const submit  = (e) => {
-    e.preventDefault();
-    const create = async() => {
-        document.getElementById("btnReg").disabled=true;
-        document.getElementById("btnReg").value="Registrandote...";
+import { ToastContainer } from "react-toastify";
+
+export default function page(){
+
+    const submit  = (e) => {
+        e.preventDefault();
+        const create = async() => {
+            document.getElementById("btnReg").disabled=true;
+            document.getElementById("btnReg").value="Registrandote...";
+           
+            if(await crearUsuario().then(res => {
+                return res})){
+                    toast("Gracias por registrarte", {type:"default" ,autoClose:1500})
+                    setInterval(() => {
+                        router.push("../")
+                    }, 2000);
+                }else{
+                    document.getElementById("btnReg").disabled=false;
+                    document.getElementById("btnReg").value="Registrarse";
+                    document.getElementById("btnReg").style.background="transparent";
+                    toast("Ese nombre o email ya estan en uso, por favor introduzca unos nuevos", {type:"error" ,autoClose:3000})
+                }
+            
+        }
+        create()
        
-        if(await crearUsuario().then(res => {
-            return res})){
-                toast("Gracias por registrarte", {type:"default" ,autoClose:1500})
-                setInterval(() => {
-                    router.push("../")
-                }, 2000);
-            }else{
-                document.getElementById("btnReg").disabled=false;
-                document.getElementById("btnReg").value="Registrarse";
-                document.getElementById("btnReg").style.background="transparent";
-                toast("Ese nombre o email ya estan en uso, por favor introduzca unos nuevos", {type:"error" ,autoClose:3000})
-            }
-        
+    
     }
-    create()
-   
-
-}
-   
-
 
 
     return (
+        
+        
         <>
-
 
             <main id="main" className="flex  h-full w-full">
                 <section className="flex justify-around flex-col max-h-screen h-full w-full items-center
@@ -46,7 +42,7 @@ export default function page() {
                     <main className="py-5 h-full max-h-screen items-center  w-full flex-col px-2   flex ">
 
                         <div className=" h-20 text-center flex justify-center">
-                            <h1 className="text-2xl sm:text-3xl flex text-center items-center content-center">Registrarse</h1>
+                            <h1 className="text-2xl sm:text-3xl flex text-center items-center content-center">Iniciar Sesion</h1>
                         </div>
                         <form onSubmitCapture={submit} className="h-full flex flex-col justify-center gap-5 text-xs w-fit sm:text-base sm:w-1/2 px-3" >
                             Usuario<input id="usernameInput" required={true} minLength={6} className="bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300 border-b-2 border-separate border-spacing-1 
@@ -63,8 +59,11 @@ export default function page() {
             </main>
             <ToastContainer autoClose={1000} hideProgressBar={false} ></ToastContainer>
             <Analytics mode='auto'></Analytics>
-        </>
-    )
+    </>
+        
+        
+        )
+
 
 
 }
