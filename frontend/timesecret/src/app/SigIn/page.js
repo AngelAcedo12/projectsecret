@@ -15,7 +15,7 @@ export default function page() {
        
         if(await crearUsuario().then(res => {
             return res})){
-                toast("Gracias por registrarte", {type:"default" ,autoClose:1000, isLoading:true });
+                toast("Gracias por registrarte", {type:"default" ,autoClose:1000,  });
                 setInterval(() => {
                     router.push("../")
                 }, 1500);
