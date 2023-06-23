@@ -1,10 +1,11 @@
+import { nextConfig } from "../../next.config";
 
  
 
 
 async function createUser(data){
      
-    const BACK_URI = process.env.BACK_URI;
+    const BACK_URI = nextConfig.env.BACK_URI;
     console.log(BACK_URI)
     const  datos = {
         username: document.getElementById("usernameInput").value,
