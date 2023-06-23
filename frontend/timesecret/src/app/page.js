@@ -55,7 +55,8 @@ export default function Home() {
                 </div>
             </nav>
           </header>
-     <div className="h-full overflow-scroll dark:scrollbar-track-black snap-y  scroll-smooth snap-proximity dark:scrollbar-thumb-white  scrollbar-track-white scrollbar-thin overflow-y scrollbar-thumb-black ">
+     <div className="h-full overflow-scroll dark:scrollbar-track-black snap-y  scroll-smooth snap-proximity dark:scrollbar-thumb-white 
+      scrollbar-track-white scrollbar-thin overflow-y scrollbar-thumb-black ">
       
       <section className="flex justify-between snap-end flex-col max-h-screen h-full w-full items-center
        content-center "  >
@@ -64,15 +65,15 @@ export default function Home() {
         
             <div className="flex flex-col  h-1/2 w-full   justify-center ">
                      
-            <div className="h-full flex  flex-col items-center justify-center w-full gap-3 transition-all hover ">
-                <h1 className="w-full text-center text-4xl animate-fade animate-delay-[1000ms]"  >¿  ?</h1>
-                <p className="w-1/2 text-center animate-fade animate-delay-[1500ms]" >Tu tienes el control y tu decides que hacer con tus datos.
+            <div className="h-full flex  flex-col items-center justify-start w-full gap-3 transition-all  hover ">
+                <h1 className="w-full text-center text-4xl animate-fade "  >¿  ?</h1>
+                <p className="w-1/2 text-center animate-fade " >Tu tienes el control y tu decides que hacer con tus datos.
 La red social anonima y temporal. </p>
             </div>
-              <div className="text-center flex-col h-full py-4 items-center w-full gap-2 flex justify-center p-7 animate-fade animate-delay-[2000ms] " >
+              <div className="text-center flex-col h-full py-4 items-center w-full gap-2 flex justify-center p-7 animate-fade  " >
                 
                  <h2 className="h-1/2   ">¡Registrate pulsado el boton de abajoo!</h2>
-                 <a className=" text-lg  text-center items-center content-center border border-black  animate-fade animate-duration-[1700ms] dark:border-white
+                 <a className=" text-lg  text-center items-center content-center border  animate-fade  border-black  dark:border-white
                   flex p-4 px-20 dark:hover:bg-slate-600 hover:bg-slate-300 rounded-lg transition-all  duration-300"
                    href="./SigIn">Registrarse</a>
               </div>
