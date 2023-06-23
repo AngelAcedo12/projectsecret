@@ -1,6 +1,5 @@
 
 import mongoose from "mongoose";
-import mesajes from "./mesajes";
 
 const userSchema = new mongoose.Schema(
     {   
@@ -18,14 +17,11 @@ const userSchema = new mongoose.Schema(
             require:true,
         },
         tokens:String,
-        mensajes:{
-            type:mesajes,
-        }
+      
         
 
         },
-        
-
+    
 
     {
         versionKey:false,
