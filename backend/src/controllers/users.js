@@ -16,13 +16,7 @@ const getItem = async (req, res) => {
 const createItem = async (req, res) => {
     console.log("crear items");
     const body = req.body;
-    const [email, username,password] = req.body
-    const nuevoBody = {
-        email: email,
-        username: username,
-        password:  await encryptPassword(password).then(res => res.json().then(data => {console.log(data) ; return data})),
-    }
-    console.log(nuevoBody)
+   
     try{
 
         const data = await usermodel.create(body)
