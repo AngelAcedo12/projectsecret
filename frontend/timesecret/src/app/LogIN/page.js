@@ -1,24 +1,43 @@
 "use client"
 import { verifyUserLogin } from "@/utils/LogInUser";
 import { Analytics } from "@vercel/analytics/react";
-import { ToastContainer } from "react-toastify";
+import { useRouter } from "next/navigation";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function page(){
-
-    const submit  = (e) => {
+    const router = useRouter()
+    const  submit  = async (e) => {
         e.preventDefault();
+        
+        const datos = {
+            username: document.getElementById("usernameInput").value,
+            email: document.getElementById("emailInput").value,
+            password: document.getElementById("passwordInput").value,
+        }
         const init = async() => {
+            
             document.getElementById("btnReg").disabled=true;
             document.getElementById("btnReg").value="Iniciando sesion...";
-           
-            console.log(await verifyUserLogin())
+            return await verifyUserLogin(datos)
             
         }
-        init()
-       
+        if(await init()){
+            toast("Success", { type: "success" });
+            document.getElementById("btnReg").disabled=false;
+            document.getElementById("btnReg").value="Iniciar sesion";
+
+            router.push("/")
+        }else{
+            document.getElementById("usernameInput").value="",
+            document.getElementById("passwordInput").value="",
+            document.getElementById("emailInput").value="",
+            document.getElementById("btnReg").disabled=false;
+            document.getElementById("btnReg").value="Iniciar sesion";
+            toast("Datos incorrrectos, por favor introduzca unos nuevos", {type:"error" ,autoClose:3000})
+        };
     
     }
-
+   
 
     return (
         

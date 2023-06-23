@@ -1,11 +1,11 @@
 import bcry from "bcryptjs";
-function comparePassword(password, passwordEncrypted){
+async  function comparePassword(password, passwordEncrypted){
 
-    const resultCompare = bcry.compare(password, passwordEncrypted, (err,result) => {
+    const resultCompare = await bcry.compareSync(password, passwordEncrypted, (err,result) => {
         if (err){
             console.log(err)
         }else{
-            
+            console.log(result)
             return result
         }
     })

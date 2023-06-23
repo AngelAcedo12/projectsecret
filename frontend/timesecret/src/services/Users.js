@@ -1,6 +1,7 @@
 
 
-
+const uri = "https://temporalsecret1.onrender.com"
+const local = "http://localhost:3004"
 
 async function createUser(data) {
 
@@ -10,8 +11,7 @@ async function createUser(data) {
         email: document.getElementById("emailInput").value,
         password: document.getElementById("passwordInput").value,
     }
-    const uri = "https://temporalsecret1.onrender.com"
-    const local = "http://localhost:3004"
+    
     return await fetch(uri + '/api/users', {
         method: "POST",
         mode: "cors",
@@ -38,8 +38,8 @@ async function userLogin(username) {
 
     
 
-
-    return await fetch(`http://localhost:3004/api/users/${username}`).then(res => res.json().
+    
+    return await fetch(`${uri}/api/users/${username}`).then(res => res.json().
     then(data => {return data}).catch(err => console.log(err)))
 
 

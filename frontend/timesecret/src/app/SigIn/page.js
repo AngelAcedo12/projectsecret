@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import 'react-toastify/dist/ReactToastify.css';
 export default function page() {
     const router = useRouter()
-   const submit  = (e) => {
+    const submit  = (e) => {
     e.preventDefault();
     const create = async() => {
         document.getElementById("btnReg").disabled=true;
@@ -15,10 +15,10 @@ export default function page() {
        
         if(await crearUsuario().then(res => {
             return res})){
-                toast("Gracias por registrarte", {type:"default" ,autoClose:1500})
+                toast("Gracias por registrarte", {type:"default" ,autoClose:1000, isLoading:true });
                 setInterval(() => {
                     router.push("../")
-                }, 2000);
+                }, 1500);
             }else{
                 document.getElementById("btnReg").disabled=false;
                 document.getElementById("btnReg").value="Registrarse";
