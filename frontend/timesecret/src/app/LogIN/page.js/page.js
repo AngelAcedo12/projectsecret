@@ -1,3 +1,4 @@
+import SpinLoader from "@/app/component/spinLoader";
 import { Analytics } from "@vercel/analytics/react";
 import { ToastContainer } from "react-toastify";
 
@@ -30,8 +31,11 @@ export default function page(){
               dark:text-white py-1 text-black  transition-all valid:border-green-500 invalid:border-red-600 duration-300 outline-none" autoComplete="none" type="password" placeholder="Introduce la contraseña"></input>
                         <input disabled={false} id="btnReg" value={"Resgistrarse"} className="p-4 hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-500" type="submit"></input>
                     </form>
+                    <SpinLoader></SpinLoader>    
                 </main>
+                
             </section>
+            
         </main>
         <ToastContainer autoClose={1000} hideProgressBar={false} ></ToastContainer>
         <Analytics mode='auto'></Analytics>
