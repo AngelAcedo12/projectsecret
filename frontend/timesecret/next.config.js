@@ -3,5 +3,8 @@ const nextConfig = {}
 
 module.exports = {
     nextConfig,
+    env:{
+        BACK_URI : "https://temporalsecret1.onrender.com",
+    }
   
 }
