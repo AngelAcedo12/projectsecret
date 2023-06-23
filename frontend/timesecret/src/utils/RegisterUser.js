@@ -8,13 +8,12 @@ const crearUsuario = async () => {
     let loading = false;
     let response = false;
     const resultCreater = async () => {
-        if (await createUser().then(res => res.json().then(data => {
-            console.log(data)
-          response=data
-        }
-        )).catch(err => {
+        if (await createUser().then(res =>response=res
+        ).catch(err => {
+            
             console.log(err)
-        })) {
+        })) 
+        {
          
             loading=true;
         }else{
