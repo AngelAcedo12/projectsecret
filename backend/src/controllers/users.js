@@ -8,9 +8,20 @@ const getItems = async (req, res) => {
 }
 const getItem = async (req, res) => {
     console.log("obtener 1 item");
+    
     const user = req.params.user
-    const data = await usermodel.find({username:user})
-    res.status(200).send(data)
+    try{
+        const data = await usermodel.find({username:user})
+        if(data.length > 0){
+            res.status(200).send(data, true)
+        }else{
+            res.status(200).send(data,false)
+        }
+       
+    }catch(err){
+        res.status(500).send(false);
+    }
+    
 }
 
 const createItem = async (req, res) => {
