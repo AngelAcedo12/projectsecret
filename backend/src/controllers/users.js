@@ -10,17 +10,25 @@ const getItem = async (req, res) => {
     console.log("obtener 1 item");
     
     const user = req.params.user
-    try{
+ 
         const data = await usermodel.find({username:user})
+         
         if(data.length > 0){
-            res.status(200).send(data, true)
+            let result = {
+                data,
+                isEmtpy: false
+            }
+            res.status(200).send(result)
         }else{
-            res.status(200).send(data,false)
+            let result = {
+                data,
+                isEmtpy: true
+            }
+            res.status(200).send(result)
+        
         }
        
-    }catch(err){
-        res.status(500).send(false);
-    }
+    
     
 }
 
