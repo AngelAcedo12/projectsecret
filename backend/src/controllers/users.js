@@ -22,7 +22,7 @@ const createItem = async (req, res) => {
     const nuevoBody = {
         username,
         email,
-        password,
+        passwordEncrypted,
     }
     try{
         const data = await usermodel.create(nuevoBody)
