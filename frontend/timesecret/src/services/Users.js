@@ -1,18 +1,17 @@
-import { nextConfig } from "../../next.config";
 
  
 
 
 async function createUser(data){
      
-    const BACK_URI = nextConfig.env.BACK_URI;
-    console.log(BACK_URI)
+    
+ 
     const  datos = {
         username: document.getElementById("usernameInput").value,
         email: document.getElementById("emailInput").value,
         password: document.getElementById("passwordInput").value,
     }
-        console.log((BACK_URI+"/api/users"))
+        console.log(("https://temporalsecret1.onrender.com/api/users"))
       return  await fetch((BACK_URI+"/api/users"), {
             method : "POST",
             mode : "cors",
