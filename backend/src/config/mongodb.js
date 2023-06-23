@@ -3,7 +3,7 @@ import mongoose from 'mongoose'
 const DB_URI = process.env.DB_URI
 
 const dbConnect= async ()=>{
-    await mongoose.connect("mongodb+srv://angelacedomelli:VXhXcX7F9m9LMluA@temporalsecrets.snpzrpl.mongodb.net/timesecrets?retryWrites=true&w=majority",{
+    await mongoose.connect(DB_URI,{
         
     
         useNewUrlParser: true,
