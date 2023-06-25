@@ -76,7 +76,7 @@ La red social anonima y temporal. </p>
                  <a className=" text-lg  text-center items-center content-center border  animate-fade  border-black  dark:border-white
                   flex p-4 px-7 dark:hover:bg-slate-600 hover:bg-slate-300 rounded-lg transition-all  duration-300"
                    href="./SigIn">Registrarse</a>
-                  <h3>Te avisaremos para por correo para que seas el primero en probarla.</h3>
+                  <h3>Te avisaremos por correo para que seas el primero en probarla.</h3>
               </div>
             </div> 
         
