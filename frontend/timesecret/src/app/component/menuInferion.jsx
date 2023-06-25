@@ -1,13 +1,13 @@
+import Inicio from "./Inicio";
 
 export default function MenuInferior(){
  
 
     return (
 
-    <div className="h-full border-t border-white flex-row w-full">
         <ul className="h-full w-full justify-evenly items-center flex ">
             <li className=" w-full  ">
-               Inicio
+               <Inicio></Inicio>
             </li>
             <li  className=" w-full ">
                 Chats
@@ -19,8 +19,8 @@ export default function MenuInferior(){
                 Perfil
             </li>
         </ul>
-        
-    </div >
+
+ 
     )
 
 }

@@ -35,7 +35,7 @@ export default function Profiler({params}){
 
                         </div>          
                 </main>
-                <div className="absolute bottom-0  py-2 w-full">
+                <div className=" sm:hidden absolute bottom-0  py-2 w-full">
                       <MenuInferior></MenuInferior>
                 </div>
         </div>
