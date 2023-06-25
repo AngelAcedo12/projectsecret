@@ -70,7 +70,6 @@ export default function page(){
             <Analytics mode='auto'></Analytics>
     </>
         
-        
         )
 
 

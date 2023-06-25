@@ -2,9 +2,7 @@
 import ExplorarTop from "@/app/component/explorarMenuArriba.";
 import Mensaje from "@/app/component/mensaje";
 import MenuInferior from "@/app/component/menuInferion";
-import Image from "next/image";
 import { useState } from "react";
-import fotoPerfill from "../../../../public/icons8-usuario-50.png";
 
 export default function Profiler({params}){
     console.log(params)
@@ -37,9 +35,7 @@ export default function Profiler({params}){
                             <h1 className="text-lg" >{params.username}</h1>
                               <div className="w-full h-max flex flex-col justify-center items-center text-center">
                             
-                                <Image className="bg-white rounded-full" width={100} height={100}  src={fotoPerfill} >
-
-                                </Image></div>
+                                </div>
                               <div className="w-full  flex flex-col items-center justify-center text-centerx"  >
                                 <h2 className="w-full items-center content-center text-center 
                                 flex-col gap-2 flex justify-around">Me gustas</h2>
