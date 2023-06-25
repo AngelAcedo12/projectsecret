@@ -13,7 +13,11 @@ const mensajesSchema = mongoose.Schema(
         isPublic:{
             type:String,
             require:["public","friends","anonimo"],
+        },
+        likes:{
+            type:Number,
         }
+
     },
     {
         versionKey:false,

@@ -56,6 +56,8 @@ export default function page() {
                   dark:text-white py-1 text-black  transition-all  valid:border-green-500 duration-500 outline-none"  type="email" placeholder="Introduzca tu email"></input>
                             Contraseña<input id="passwordInput" required={true} minLength={6} className="bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300   border-b-2 border-separate border-spacing-1
                   dark:text-white py-1 text-black  transition-all valid:border-green-500 invalid:border-red-600 duration-300 outline-none" autoComplete="none" type="password" placeholder="Introduce la contraseña"></input>
+                  <h1 className="text-xs">Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado</h1> 
+                    
                             <input disabled={false} id="btnReg" value={"Resgistrarse"} className="p-4  border-black border dark:border-white hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-300" type="submit"></input>
                         </form>
                     </main>

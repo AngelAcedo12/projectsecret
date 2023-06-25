@@ -48,6 +48,7 @@ const createItem = async (req, res) => {
         username,
         email,
         password:await encryptPassword(password),
+        isPublic:"anonimo"
     }
     try{
         const data = await usermodel.create(nuevoBody)
