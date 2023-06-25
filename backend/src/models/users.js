@@ -24,20 +24,26 @@ const userSchema = new mongoose.Schema(
                     require:true,
                 },
                 Text:{
+                    require:true,
                     type:String,
                 },
                 isPublic:{
                     type:String,
                     require:["public","friends","anonimo"],
-                    default:"anonimo",
+                    
                 },
                 likes:{
                     type:Number,
                 }
                 
             }
-        ]
-        
+ 
+        ],
+        typePerfil:{
+            type:String,
+            require:["public","friends","anonimo"],
+            default:"anonimo"
+        }
 
         },
     

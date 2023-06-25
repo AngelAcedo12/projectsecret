@@ -47,8 +47,9 @@ const createItem = async (req, res) => {
     const nuevoBody = {
         username,
         email,
+        typePerfil:"anonimo",
         password:await encryptPassword(password),
-        isPublic:"anonimo"
+      
     }
     try{
         const data = await usermodel.create(nuevoBody)
