@@ -12,7 +12,7 @@ const getItem = async (req, res) => {
     const user = req.params.user
  
         const data = await usermodel.find({username:user})
-         
+    try{
         if(data.length > 0){
             var token = jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30 , 
@@ -34,7 +34,11 @@ const getItem = async (req, res) => {
             res.status(200).send(result)
         
         }
+    }catch(err) {
+         res.status(500).send([])
+    }
        
+        
     
     
 }

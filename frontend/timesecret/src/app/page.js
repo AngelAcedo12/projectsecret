@@ -18,7 +18,7 @@ export default function Home() {
     sa=sa<10 ? "0"+sa:sa
     da=da<10 ? "0"+da:da
     setTime({year:date.getFullYear(),mont:"0"+(date.getMonth()+1).toString(),day:da,h:ha,m:ma,s:sa});
-
+    
   }
   setTimeout(() => {
     UpdateTime();

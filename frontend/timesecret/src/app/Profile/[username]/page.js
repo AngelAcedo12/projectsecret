@@ -1,13 +1,42 @@
 "use client"
 import ExplorarTop from "@/app/component/explorarMenuArriba.";
-import Mensaje from "@/app/component/mensaje";
 import MenuInferior from "@/app/component/menuInferion";
-import { useState } from "react";
+import { dataForUser } from "@/utils/UtilsProfile";
+import { useEffect, useState } from "react";
 
-export default function Profiler({params}){
-    console.log(params)
+
+export default  function Profiler({params}){
+    
     const [AreYouTePerson, setAreYouTePerson] = useState(true);
-    return (
+    const [data  , setData] = useState();
+    const [loading , setLoading] = useState(false);
+    const [isEmtpy, setIsEmtpy] = useState(false);
+    
+    useEffect(() => {
+      setData(dataForUser(params.username).then(res => {
+        if(res.isEmtpy){
+          setIsEmtpy(true);
+          
+        }
+        setLoading(true)
+        return res }))
+        
+      
+    }, [])
+    
+    if(loading==false){
+      console.log(loading)
+      return <h1>Cargando...</h1>
+
+    }else{
+
+    if(isEmtpy){
+      return <h1>Usuario no encontrado</h1>
+    }else{
+
+    
+    
+    return (  
         <>
        <header className="w-full   top-0  ">
             <nav className="flex flex-row  gap-2 justify-between py-1 p-1">
@@ -38,14 +67,14 @@ export default function Profiler({params}){
                                 </div>
                               <div className="w-full  flex flex-col items-center justify-center text-centerx"  >
                                 <h2 className="w-full items-center content-center text-center 
-                                flex-col gap-2 flex justify-around">Me gustas</h2>
+                                flex-col gap-2 flex justify-around">Me gustas totales</h2>
                                 <h2>23</h2>
                               </div>
                           </div>
                         
                           <div className="p-2 text-sm flex flex-col gap-2 ">
                             <div className="text-sm">
-                              <h1>Tipo de perfil:  </h1>
+                              <h1>Tipo de perfil: Publico  </h1>
                             </div>
                             <h1>Biografia</h1>
                              <p> "Explorando el mundo con pasión y creatividad. Compartiendo momentos únicos a través de la 
@@ -54,23 +83,11 @@ export default function Profiler({params}){
                         </div>
 
                         <div className="   h-full">
-                        <div className="w-full  pb-5 flex   flex-col border-t border-white ">
-                          <button>Mensajes</button>
-                          <div className="  w-full flex flex-col  
+                        <div className="w-full  pb-5 flex  flex-col border-t border-white ">
+                          <h1 className="text-center py-6">Mensajes</h1>
+                          <div className=" gap-6  w-full flex flex-col 
                             ">
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
-                            <Mensaje></Mensaje>
+                             
                           </div>
                           </div>        
                         </div>
@@ -89,5 +106,5 @@ export default function Profiler({params}){
     )
 
 
-
-}
+    }
+  }}
