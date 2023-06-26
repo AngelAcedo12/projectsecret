@@ -33,6 +33,8 @@ async function createUser(data) {
 
 
 
+
+
 }
 async function userLogin(username) {
 
@@ -44,10 +46,14 @@ async function userLogin(username) {
 
 
 }
+async function obteinDataForUser(username) {
+
+    return await fetch(`${uri}/api/users/${username}`).then(res =>res.json().then(data => {return data})).catch(err => console.log(err))
+    
+}
 
 
 export {
-    createUser,
-    userLogin
+    createUser, obteinDataForUser, userLogin
 }
 
