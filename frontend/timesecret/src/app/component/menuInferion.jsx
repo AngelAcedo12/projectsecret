@@ -10,8 +10,8 @@ export default function MenuInferior(){
         <nav>
 
        
-        <ul className="h-full w-full items-center flex ">
-            <li className=" w-full  ">
+        <ul className="h-full w-full bg-white dark:bg-black border-t border-black b items-center flex ">
+            <li className=" w-full ">
                <Inicio></Inicio>
             </li>
            
