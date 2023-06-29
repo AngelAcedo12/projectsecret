@@ -12,12 +12,12 @@ const verifyUserLogin = async (datos) => {
     let token = "";
     let resultado = []
     await userLogin(datos.username).then(res =>  {
+       
         if (res.isEmtpy==false) {
-            console.log("Ok")
+           
             loading=true;
             token = res.token;
-            res.data.map((elemento) => {
-                console.log(elemento)
+            res.resultFInd.map((elemento) => {
                 passwordEncrypter=elemento.password,
                 email= elemento.email,
                 username = elemento.username

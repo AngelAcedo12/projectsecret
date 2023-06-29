@@ -42,13 +42,16 @@ async function userLogin(username) {
 
     
     return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res => res.json().
-    then(data => {return data}).catch(err => console.log(err)))
+    then(data => {
+        return data}).catch(err => console.log(err)))
 
 
 }
 async function obteinDataForUser(username) {
 
-    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {return data})).catch(err => console.log(err))
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {
+      
+        return data})).catch(err => console.log(err))
     
 }
 
