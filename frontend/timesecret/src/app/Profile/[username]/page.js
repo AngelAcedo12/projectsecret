@@ -1,6 +1,8 @@
 "use client"
 import ExplorarTop from "@/app/component/explorarMenuArriba.";
+import Mensaje from "@/app/component/mensaje";
 import MenuInferior from "@/app/component/menuInferion";
+import MenuLater from "@/app/component/menuLater";
 import { dataForUser } from "@/utils/UtilsProfile";
 import { useEffect, useState } from "react";
 
@@ -48,19 +50,16 @@ export default  function Profiler({params}){
               </div>
               <div className="w-1/2">
                 <ExplorarTop></ExplorarTop>
-
               </div>
-          
             </nav>
           </header>
-          
-        <section className="flex flex-col overflow-y-auto scrollbar-thin dark:scrollbar-track-black dark:scrollbar-thumb-white h-full w-full pb-8 z-0
-                       " > 
-            
-                
-
-                        <div className="w-full justify-around flex-col gap-3 flex h-full py-3 ">
-                          <div className="flex h-full flex-col w-full gap-3 justify-between text-center  text-sm">
+        
+        <section className="flex flex-row  h-full w-full pb-8 z-0" > 
+          <MenuLater></MenuLater>
+          <div className="overflow-y-auto w-full scrollbar-thin flex flex-col dark:scrollbar-track-black scrollbar-thumb-black
+           dark:scrollbar-thumb-white"> 
+                         <div className="w-full justify-normal flex-col  flex   mb-20">
+                          <div className="flex  flex-col w-full  justify-normal text-center  text-sm">
                             <h1 className="text-lg" >{params.username}</h1>
                               <div className="w-full h-max flex flex-col justify-center items-center text-center">
                             
@@ -71,7 +70,6 @@ export default  function Profiler({params}){
                                 <h2>23</h2>
                               </div>
                           </div>
-                        
                           <div className="p-2 text-sm flex flex-col gap-2 ">
                             <div className="text-sm">
                               <h1>Tipo de perfil: Publico  </h1>
@@ -83,22 +81,23 @@ export default  function Profiler({params}){
                         </div>
 
                         <div className="   h-full">
-                        <div className="w-full  pb-5 flex  flex-col border-t border-white ">
+                        <div className="w-full  pb-5 flex  flex-col border-t border-black dark:border-slate-200  ">
                           <h1 className="text-center py-6">Mensajes</h1>
-                          <div className=" gap-6  w-full flex flex-col 
-                            ">
-                             
+                          <div className=" gap-6  w-full flex flex-col">
                           </div>
+                          <Mensaje></Mensaje>
+                          <Mensaje></Mensaje>
+                          <Mensaje></Mensaje>
                           </div>        
                         </div>
                           
-                         
+                        </div>             
 
                          
             
               
         </section>
-        <div className="bg-black mt-4 fixed  bottom-0 sm:hidden   w-full">
+        <div className="fixed  bottom-0 sm:hidden   w-full">
                       <MenuInferior></MenuInferior>
               
         </div> 

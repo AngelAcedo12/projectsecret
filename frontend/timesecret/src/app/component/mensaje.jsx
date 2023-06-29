@@ -24,7 +24,7 @@ export default function Mensaje() {
                     <CompartirdoVeces></CompartirdoVeces>
                 </div>
                 <div className="w-full  border-t  border-gray-500 mt-2 flex text-center items-center justify-center">
-                    <Link className="w-full pt-3" href={"../"}>Ver Respuestas</Link>
+                    <Link className="w-1/2 py-3 mt-3  dark:hover:bg-slate-500 hover:bg-slate-300 rounded-lg"  href={"../"}>Ver Respuestas</Link>
                 </div> 
             </div>
         

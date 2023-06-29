@@ -10,7 +10,7 @@ const getItem = async (req, res) => {
     console.log("obtener 1 item");
     
     const user = req.params.user
- 
+        
         const data = await usermodel.find({username:user})
     try{
         if(data.length > 0){

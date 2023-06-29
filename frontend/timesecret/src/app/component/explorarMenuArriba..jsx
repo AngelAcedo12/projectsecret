@@ -4,10 +4,10 @@ export default function ExplorarTop(){
 
     return (
         <>      
-        <div className="h-full w-full pr-2">
-            <Link href={"../"} className="items-center content-center h-full flex justify-end">
+        <div className="h-full w-full">
+            <Link href={"../"} className="items-center content-center h-full flex justify-end ">
             
-            <div className="">
+            <div className="px-2 hover:bg-slate-300 dark:hover:bg-slate-500 py-2 rounded-full focus:bg-slate-300">
                     <svg xmlns="http://www.w3.org/2000/svg"  
                     viewBox="0 0 50 50" width="20px" height="20px" className="dark:fill-white fill-black">
                     <path d="M 21 3 C 11.601563 3 4 10.601563 4 20 C 4 29.398438 11.601563 37 21 37 C 24.355469 37 27.460938 
