@@ -16,12 +16,6 @@ export default function page(){
             <div className="h-full flex flex-col justify-center w-full items-center align-middle text-center ">
                 <h1>404 NOT FOUND</h1>
             </div>
-        
-        
-        
-
-
-
     )
 
 }

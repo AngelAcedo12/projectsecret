@@ -1,7 +1,7 @@
 
 
-const uri = "https://temporalsecret1.onrender.com"
-const local = "http://localhost:3004"
+const uri = "https://temporalsecrets-mocha.vercel.app/"
+const local = "http://localhost:3000"
 
 async function createUser(data) {
 
@@ -12,7 +12,7 @@ async function createUser(data) {
         password: document.getElementById("passwordInput").value,
     }
     
-    return await fetch(uri + '/api/users', {
+    return await fetch(uri + '/api/user', {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
@@ -41,14 +41,14 @@ async function userLogin(username) {
     
 
     
-    return await fetch(`${uri}/api/users/${username}`).then(res => res.json().
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res => res.json().
     then(data => {return data}).catch(err => console.log(err)))
 
 
 }
 async function obteinDataForUser(username) {
 
-    return await fetch(`${uri}/api/users/${username}`).then(res =>res.json().then(data => {return data})).catch(err => console.log(err))
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {return data})).catch(err => console.log(err))
     
 }
 
