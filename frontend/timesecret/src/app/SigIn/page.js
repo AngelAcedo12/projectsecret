@@ -4,34 +4,36 @@ import { ToastContainer, toast } from "react-toastify";
 import { crearUsuario } from "@/utils/RegisterUser";
 import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/navigation";
+
 import 'react-toastify/dist/ReactToastify.css';
 export default function page() {
     const router = useRouter()
-    const submit  = (e) => {
-    e.preventDefault();
-    const create = async() => {
-        document.getElementById("btnReg").disabled=true;
-        document.getElementById("btnReg").value="Registrandote...";
-       
-        if(await crearUsuario().then(res => {
-            return res})){
-                toast("Gracias por registrarte", {type:"default" ,autoClose:1000,  });
+    const submit = (e) => {
+        e.preventDefault();
+        const create = async () => {
+            document.getElementById("btnReg").disabled = true;
+            document.getElementById("btnReg").value = "Registrandote...";
+
+            if (await crearUsuario().then(res => {
+                return res
+            })) {
+                toast("Gracias por registrarte", { type: "default", autoClose: 1000, });
                 setInterval(() => {
                     router.push("../")
                 }, 1500);
-            }else{
-                document.getElementById("btnReg").disabled=false;
-                document.getElementById("btnReg").value="Registrarse";
-                document.getElementById("btnReg").style.background="transparent";
-                toast("Ese nombre o email ya estan en uso, por favor introduzca unos nuevos", {type:"error" ,autoClose:3000})
+            } else {
+                document.getElementById("btnReg").disabled = false;
+                document.getElementById("btnReg").value = "Registrarse";
+                document.getElementById("btnReg").style.background = "transparent";
+                toast("Ese nombre o email ya estan en uso, por favor introduzca unos nuevos", { type: "error", autoClose: 3000 })
             }
-        
-    }
-    create()
-   
 
-}
-   
+        }
+        create()
+
+
+    }
+
 
 
 
@@ -56,10 +58,12 @@ export default function page() {
                   dark:text-white py-1 text-black  transition-all  valid:border-green-500 duration-500 outline-none"  type="email" placeholder="Introduzca tu email"></input>
                             Contraseña<input id="passwordInput" required={true} minLength={6} className="bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300   border-b-2 border-separate border-spacing-1
                   dark:text-white py-1 text-black  transition-all valid:border-green-500 invalid:border-red-600 duration-300 outline-none" autoComplete="none" type="password" placeholder="Introduce la contraseña"></input>
-                  <h1 className="text-xs">Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado</h1> 
-                    
+                            <h1 className="text-xs">Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado</h1>
+
                             <input disabled={false} id="btnReg" value={"Resgistrarse"} className="p-4  border-black border dark:border-white hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-300" type="submit"></input>
+
                         </form>
+
                     </main>
                 </section>
             </main>

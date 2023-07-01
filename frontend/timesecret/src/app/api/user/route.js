@@ -45,6 +45,31 @@ async function POST (request) {
 
 }
 
+
+
+
+async function PUT  (request){
+    const body = await request.json()
+    const {username,biografia} = body
+   const name = username
+
+    try{
+        const filter= {username:name}
+        let userActual = await users.findOne(filter)
+        console.log(userActual);
+        userActual['biografia']=biografia
+        console.log(userActual);
+
+        await users.replaceOne(filter,userActual)
+        return new Response(JSON.stringify(true))
+
+    }catch(err){
+        console.log(err);
+        return new Response(JSON.stringify(false))
+    }
+}
+
+
 /** 
 const updateItem = async (req, res) => {
     const { username, idFilm } = req
@@ -56,5 +81,5 @@ const updateItem = async (req, res) => {
     res.send(data)
 }
 */
-export { GET, POST };
+export { GET, POST, PUT };
 

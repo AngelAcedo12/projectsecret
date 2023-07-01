@@ -4,7 +4,7 @@ const dataForUser = async (username)=>{
 
 
     return await obteinDataForUser(username).then(res => {
-        console.log(res)
+      
         return res 
     })
 
