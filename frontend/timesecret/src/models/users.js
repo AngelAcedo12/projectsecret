@@ -16,34 +16,15 @@ const userSchema = new moongose.Schema(
             require:true,
         },
         tokens:String,
-        mensejes:[
-            {
-                username:{
-                    type:String,
-                    require:true,
-                },
-                Text:{
-                    require:true,
-                    type:String,
-                },
-                isPublic:{
-                    type:String,
-                    require:["public","friends","anonimo"],
-                    
-                },
-                likes:{
-                    type:Number,
-                }
-                
-            }
- 
-        ],
         typePerfil:{
             type:String,
             require:["public","friends","anonimo"],
             default:"anonimo"
-        }
-
+        },
+        biografia:{
+            type:String,
+        },
+        
         },
     
 

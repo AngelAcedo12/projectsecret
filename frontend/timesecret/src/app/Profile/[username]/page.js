@@ -16,6 +16,7 @@ export default  function Profiler({params}){
     
     useEffect(() => {
       setData(dataForUser(params.username).then(res => {
+        
         if(res.isEmtpy){
           setIsEmtpy(true);
           
@@ -27,8 +28,24 @@ export default  function Profiler({params}){
     }, [])
     
     if(loading==false){
-      console.log(loading)
-      return <h1>Cargando...</h1>
+     
+      return (
+            <div className="h-full w-full flex items-center justify-center">
+            <div
+      class="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite] rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
+      role="status">
+      <span
+        class="!absolute  !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
+        >Loading...</span
+      >
+    </div>
+            </div>
+      )
+       
+       
+
+
+      
 
     }else{
 
@@ -56,21 +73,21 @@ export default  function Profiler({params}){
         
         <section className="flex flex-row  h-full w-full pb-8 z-0" > 
           <MenuLater></MenuLater>
-          <div className="overflow-y-auto w-full scrollbar-thin flex flex-col dark:scrollbar-track-black scrollbar-thumb-black
+          <div className="overflow-y-auto  w-full h-full scrollbar-thin flex gap-10 flex-col px-3 dark:scrollbar-track-black scrollbar-thumb-black
            dark:scrollbar-thumb-white"> 
-                         <div className="w-full justify-normal flex-col  flex   mb-20">
+                         <div className="w-full justify-normal flex-col  flex  ">
                           <div className="flex  flex-col w-full  justify-normal text-center  text-sm">
-                            <h1 className="text-lg" >{params.username}</h1>
+                            <h1 className="text-2xl" >{params.username}</h1>
                               <div className="w-full h-max flex flex-col justify-center items-center text-center">
                             
                                 </div>
                               <div className="w-full  flex flex-col items-center justify-center text-centerx"  >
-                                <h2 className="w-full items-center content-center text-center 
+                                <h2 className="w-full text-xs sm:text-lg  items-center content-center text-center 
                                 flex-col gap-2 flex justify-around">Me gustas totales</h2>
-                                <h2>23</h2>
+                                <h2 className="text-xs sm:text-lg ">23</h2>
                               </div>
                           </div>
-                          <div className="p-2 text-sm flex flex-col gap-2 ">
+                          <div className="p-2 text-xs sm:text-lg flex flex-col gap-2 ">
                             <div className="text-sm">
                               <h1>Tipo de perfil: Publico  </h1>
                             </div>
@@ -81,13 +98,13 @@ export default  function Profiler({params}){
                         </div>
 
                         <div className="   h-full">
-                        <div className="w-full  pb-5 flex  flex-col border-t border-black dark:border-slate-200  ">
+                        <div className="w-full border-t border-slate-100 pb-5 flex  flex-col   ">
                           <h1 className="text-center py-6">Mensajes</h1>
-                          <div className=" gap-6  w-full flex flex-col">
+                          <div className="   mt-1 w-full max-h-full flex flex-col">
+                          <Mensaje></Mensaje>
+                          <Mensaje></Mensaje>
+                          <Mensaje></Mensaje>
                           </div>
-                          <Mensaje></Mensaje>
-                          <Mensaje></Mensaje>
-                          <Mensaje></Mensaje>
                           </div>        
                         </div>
                           

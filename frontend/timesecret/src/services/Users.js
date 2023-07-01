@@ -1,6 +1,6 @@
 
 
-const uri = "https://temporalsecrets-mocha.vercel.app/"
+const uri = "https://temporalsecrets.com/"
 const local = "http://localhost:3000"
 
 async function createUser(data) {
@@ -27,14 +27,6 @@ async function createUser(data) {
 
         return data
     }))
-
-
-
-
-
-
-
-
 }
 async function userLogin(username) {
 
