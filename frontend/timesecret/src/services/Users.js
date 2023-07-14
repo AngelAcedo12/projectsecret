@@ -1,7 +1,7 @@
 
 
 const uri = "https://temporalsecrets.com/"
-const local = "http://localhost:3000"
+const local = "http://localhost:3001"
 
 async function createUser(data) {
 
@@ -12,7 +12,7 @@ async function createUser(data) {
         password: document.getElementById("passwordInput").value,
     }
     
-    return await fetch(local + '/api/user', {
+    return await fetch(uri + '/api/user', {
         method: "POST",
         mode: "cors",
         body: JSON.stringify({
@@ -33,7 +33,7 @@ async function userLogin(username) {
     
 
     
-    return await fetch(`${local}/api/authNotProvider?name=${username}`).then(res => res.json().
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res => res.json().
     then(data => {
         return data}).catch(err => console.log(err)))
 
@@ -41,7 +41,7 @@ async function userLogin(username) {
 }
 async function obteinDataForUser(username) {
 
-    return await fetch(`${local}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {
       
         return data})).catch(err => console.log(err))
     

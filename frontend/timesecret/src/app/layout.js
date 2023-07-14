@@ -1,7 +1,7 @@
 import { Inter } from 'next/font/google'
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
-
+import 'react-circular-progressbar/dist/styles.css';
 
 const inter = Inter({ subsets: ['latin'] })
 

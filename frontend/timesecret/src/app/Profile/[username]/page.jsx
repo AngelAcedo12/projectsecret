@@ -16,10 +16,14 @@ export default function Profiler({ params }) {
 
   useEffect(() => {
     setData(dataForUser(params.username).then(res => {
-
+    
       if (res.isEmtpy) {
         setIsEmtpy(true);
 
+      }else{
+        setIsEmtpy(false)
+        setData(res.resultFInd[0])
+      
       }
       setLoading(true)
       return res
@@ -33,7 +37,8 @@ export default function Profiler({ params }) {
     return (
       <div className="h-full w-full flex items-center justify-center">
         <div
-          className="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite] rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
+          className="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite]
+           rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
           role="status">
           <span
             className="!absolute  !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
@@ -58,44 +63,38 @@ export default function Profiler({ params }) {
       return (
         <>
           <header className="w-full   top-0  ">
-            <nav className="flex flex-row  gap-2 justify-between py-1 p-1">
+            <nav className="flex flex-row  gap-2 justify-between border-b dark:border-white border-black py-1 p-1">
               <div className="justify-start flex w-full items-center  content-center">
-                <h1 className="font-normal  text-base sm:text-3xl text-start  w-full  py-2 sm:p-3 rounded-lg  transition-all  duration-500  animate-fade">TEMPORALSECRETS</h1>
+                <h1 className="font-normal  text-base sm:text-3xl text-start  w-full  py-2 sm:p-3 rounded-lg  transition-all   duration-500  animate-fade">TEMPORALSECRETS</h1>
               </div>
-
               <ExplorarTop></ExplorarTop>
-
             </nav>
           </header>
 
-          <section className="flex flex-col sm:flex-row md:flex-row lg:flex-row  h-full w-full pb-8 z-0" >
+          <section className="flex flex-col  sm:flex-row md:flex-row lg:flex-row   h-full w-full pb-8 " >
             <MenuLater></MenuLater>
-            <div className="overflow-y-auto  w-full h-full scrollbar-thin flex gap-2 flex-col pl-1.5 dark:scrollbar-track-black
-             scrollbar-thumb-black dark:scrollbar-thumb-white">
-              <div className="w-full sticky top-0 dark:bg-black bg-white backdrop-brightness-50 backdrop-blur-3xl border-black
-               dark:border-white  border-b justify-normal flex-col  flex  ">
-                <div className="flex  flex-col w-full  justify-normal text-center  text-sm">
-                  <h1 className="text-2xl" >{params.username}</h1>
-                  <div className="w-full h-max flex flex-col justify-center items-center text-center">
-
-                  </div>
-                  <div className="w-full  flex flex-col items-center justify-center text-centerx"  >
-                    <h2 className="w-full text-xs sm:text-lg  items-center content-center text-center flex-col gap-2 flex justify-around">Me gustas totales</h2>
-                    <h2 className="text-xs sm:text-lg">23</h2>
-                  </div>
+            <div className="  w-full h-full  overflow-y-auto z-100 scrollbar-w-0.5   scrollbar scrollbar-track-white dark:scrollbar-track-white dark:scrollbar-track-rounded-sm dark:scrollbar-thumb-gray-700
+            scrollbar-thumb-rounded-full   scrollbar-rounded  flex gap-2 flex-col   
+             ">
+              <div className="w-full sticky top-0  border-b  py-5 text-white text  bg-white dark:bg-black   border-black
+               dark:border-white rounded-lg   justify-normal flex-col  flex  ">
+                <div className="flex  flex-col w-full  justify-normal  text-center px-2 ">
+                  <h1 className="text-2xl   sm:p-4 bg-clip-text text-transparent bg-gradient-to-r sm:text-4xl from-green-300 via-blue-500
+                   to-purple-600    " 
+                  
+                  >{data.username}</h1>
+                  
+                 
                 </div>
-                <div className="p-2 text-xs sm:text-lg flex flex-col gap-2 ">
-                  <div className="text-sm">
-                    <h1>Tipo de perfil: Publico  </h1>
-                  </div>
-
-                </div>
+              
               </div>
               <div>
-                <div className="">
-                  <div className="w-full  pb-2 flex  flex-col   ">
-                    <h1 className="text-center py-3 ">Mensajes</h1>
-                    <ul className=" w-full max-h-full py-2 flex flex-col pl-1 gap-1 mb-10 md:mb-10">
+                <div className=" w-full  ">
+                  <div className="w-full  flex  flex-col   ">
+                    <h1 className="text-center py-3 sm:text-xl ">Mensajes</h1>
+                    <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
+                      <Mensaje></Mensaje>
+                      <Mensaje></Mensaje>
                       <Mensaje></Mensaje>
                       <Mensaje></Mensaje>
                       <Mensaje></Mensaje>
