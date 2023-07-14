@@ -46,8 +46,8 @@ export default function page() {
             constraseña2.classList.add("border-green-500")
         }else{
             document.getElementById("msgPassword22").innerHTML="Las contraseñas no coinciden"
-            constraseña2.classList.add("border-green-500")
-            constraseña2.classList.remove("border-red-600")
+            constraseña2.classList.remove("border-green-500")
+            constraseña2.classList.add("border-red-600")
             document.getElementById("btnReg").disabled = true;
 
         }
