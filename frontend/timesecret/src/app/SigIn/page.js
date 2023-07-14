@@ -40,10 +40,11 @@ export default function page() {
         const constraseña2 = document.getElementById("passwordInput2")
         console.log("goas");
         if (constraseña2.value==contraseña1.value){
-            document.getElementById("btnReg").disabled = false;
+           
             document.getElementById("msgPassword22").innerHTML=""
             constraseña2.classList.remove("border-red-600")
             constraseña2.classList.add("border-green-500")
+            document.getElementById("btnReg").disabled = false;
         }else{
             document.getElementById("msgPassword22").innerHTML="Las contraseñas no coinciden"
             constraseña2.classList.remove("border-green-500")
@@ -56,8 +57,6 @@ export default function page() {
 
     return (
         <>
-
-
             <main id="main" className="flex  h-full w-full">
                 <section className="flex justify-around flex-col max-h-screen h-full w-full items-center
                 content-center ">
@@ -87,10 +86,7 @@ export default function page() {
                             placeholder="Introduce la contraseña"></input>
                             <h3 id="msgPassword22" className=" w-full  text-red-500"></h3>
                             </div>
-                           
-                           
                             <h1 className="text-xs">Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado</h1>
-                            
                             <input disabled={true} id="btnReg" value={"Resgistrarse"} className="p-4 disabled:bg-red-500 disabled:text-white bg-green-500 text-black    hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-300" type="submit"></input>
 
                         </form>
