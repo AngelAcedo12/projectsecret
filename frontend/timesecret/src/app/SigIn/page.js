@@ -42,10 +42,12 @@ export default function page() {
         if (constraseña2.value==contraseña1.value){
             document.getElementById("btnReg").disabled = false;
             document.getElementById("msgPassword22").innerHTML=""
+            constraseña2.classList.remove("border-red-600")
             constraseña2.classList.add("border-green-500")
         }else{
             document.getElementById("msgPassword22").innerHTML="Las contraseñas no coinciden"
-            constraseña2.classList.add("border-red-600")
+            constraseña2.classList.add("border-green-500")
+            constraseña2.classList.remove("border-red-600")
             document.getElementById("btnReg").disabled = true;
 
         }
@@ -81,7 +83,7 @@ export default function page() {
                         Repite la contraseña
                             <div>
                             <input onChange={verificarContraseñaIsEquals} id="passwordInput2" required={true} minLength={6} className="w-full bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300   border-b-2 border-separate border-spacing-1
-                            dark:text-white py-1 text-black  transition-all invalid:border-red-500 duration-300 outline-none" autoComplete="none" type="password"
+                            dark:text-white py-1 text-black  transition-all invalid:border-red-600 duration-300 outline-none" autoComplete="none" type="password"
                             placeholder="Introduce la contraseña"></input>
                             <h3 id="msgPassword22" className=" w-full  text-red-500"></h3>
                             </div>
