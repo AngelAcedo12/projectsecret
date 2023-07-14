@@ -5,8 +5,8 @@ export default function Mensaje() {
 
     return (
         <>
-            <div className="   text-xs sm:text-lg  dark:hover:bg-[#0D0D0D] bg-blend-color-burn border border-[#808080]   dark:border-[#808080]  px-5 rounded-md
-             transition-all duration-100  dark:shadow-neutral-500   py-3   ">
+            <div className="   text-xs sm:text-lg   bg-blend-color-burn    px-5 rounded-md
+             transition-all duration-100     py-3   ">
                 <div className="w-full items-center py-1"> 
                     <h1>Usuario: Manolll</h1>
                 </div>

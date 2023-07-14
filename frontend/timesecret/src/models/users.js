@@ -21,9 +21,7 @@ const userSchema = new moongose.Schema(
             require:["public","friends","anonimo"],
             default:"anonimo"
         },
-        biografia:{
-            type:String,
-        },
+      
         
         },
     

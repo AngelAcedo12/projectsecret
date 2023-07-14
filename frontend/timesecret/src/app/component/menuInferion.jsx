@@ -21,7 +21,7 @@ export default function MenuInferior(){
             <li  className=" w-full ">
                 <PerfilMenu></PerfilMenu>
             </li>
-            <li className="w-full">
+            <li className="hidden w-full">
                 <DiarioMenu></DiarioMenu>
             </li>
         </ul>

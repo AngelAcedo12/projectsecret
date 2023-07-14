@@ -6,20 +6,23 @@ import MenuLater from "@/app/component/menuLater";
 import { dataForUser } from "@/utils/UtilsProfile";
 import { getCookie } from "cookies-next";
 import jwt_decode from "jwt-decode";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 
 export default  function Profiler({ params }) { 
   const token = getCookie("rt-user-login")
-
-
+  
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const [isEmtpy, setIsEmtpy] = useState(false);
-
+  const rooter = useRouter()
   useEffect(() => {
-    const user= jwt_decode(token)
     
-    setData(dataForUser(user.username).then(res => {
+    let user=null;
+    
+    try{
+     user= jwt_decode(token)
+     setData(dataForUser(user.username).then(res => {
     
       if (res.isEmtpy) {
         console.log("object");
@@ -32,6 +35,11 @@ export default  function Profiler({ params }) {
       setLoading(true)
       return res
     }))
+    }catch{
+      rooter.push("./LogIN")
+    }
+    
+   
 
 
   }, [])
@@ -76,21 +84,16 @@ export default  function Profiler({ params }) {
             </nav>
           </header>
 
-          <section className="flex flex-col sm:flex-row md:flex-row lg:flex-row  h-full w-full pb-8 z-0" >
+          <section className="flex flex-col  sm:flex-row md:flex-row lg:flex-row dark:bg-gradient-to-r dark:from-slate-900 dark:to-slate-700 h-full w-full pb-8 " >
             <MenuLater></MenuLater>
-            <div className="overflow-y-auto  w-full h-full scrollbar-thin flex gap-2 flex-col pl-1.5 dark:scrollbar-track-black
-             scrollbar-thumb-black dark:scrollbar-thumb-white">
-              <div className="w-full sticky top-0 dark:bg-black bg-white backdrop-brightness-50 backdrop-blur-3xl border-black
-               dark:border-white  border-b justify-normal flex-col  flex  ">
-                <div className="flex  flex-col w-full  justify-normal text-center  text-sm">
+            <div className="  w-full h-full  overflow-y-auto z-100  flex gap-2 flex-col   
+             ">
+              <div className="w-full sticky top-0 dark:bg-[#322e34] dark:bg-opacity-10 py-5   bg-white backdrop-brightness-50 backdrop-blur-3xl border-black
+               dark:border-white   justify-normal flex-col  flex  ">
+                <div className="flex  flex-col w-full  justify-normal  text-center px-2 text-sm">
                   <h1 className="text-2xl" >{data.username}</h1>
-                  <div className="w-full h-max flex flex-col justify-center items-center text-center">
-
-                  </div>
-                  <div className="w-full  flex flex-col items-center justify-center text-centerx"  >
-                    <h2 className="w-full text-xs sm:text-lg  items-center content-center text-center flex-col gap-2 flex justify-around">Me gustas totales</h2>
-                    <h2 className="text-xs sm:text-lg">23</h2>
-                  </div>
+                  
+                 
                 </div>
                 <div className="p-2 text-xs sm:text-lg flex flex-col gap-2 ">
                   <div className="text-sm">
@@ -100,10 +103,12 @@ export default  function Profiler({ params }) {
                 </div>
               </div>
               <div>
-                <div className="">
-                  <div className="w-full  pb-2 flex  flex-col   ">
+                <div className=" w-full  ">
+                  <div className="w-full  flex  flex-col   ">
                     <h1 className="text-center py-3 ">Mensajes</h1>
-                    <ul className=" w-full max-h-full py-2 flex flex-col pl-1 gap-1 mb-10 md:mb-10">
+                    <ul className=" w-full   py-2 flex flex-col  mr-1 gap-1 mb-10 md:mb-10">
+                      <Mensaje></Mensaje>
+                      <Mensaje></Mensaje>
                       <Mensaje></Mensaje>
                       <Mensaje></Mensaje>
                       <Mensaje></Mensaje>

@@ -33,7 +33,8 @@ export default function Profiler({ params }) {
     return (
       <div className="h-full w-full flex items-center justify-center">
         <div
-          className="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite] rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
+          className="inline-block h-8 w-8 animate-[spinner-grow_0.75s_linear_infinite]
+           rounded-full bg-current align-[-0.125em] opacity-0 motion-reduce:animate-[spinner-grow_1.5s_linear_infinite]"
           role="status">
           <span
             className="!absolute  !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]"
@@ -60,7 +61,8 @@ export default function Profiler({ params }) {
           <header className="w-full   top-0  ">
             <nav className="flex flex-row  gap-2 justify-between py-1 p-1">
               <div className="justify-start flex w-full items-center  content-center">
-                <h1 className="font-normal  text-base sm:text-3xl text-start  w-full  py-2 sm:p-3 rounded-lg  transition-all  duration-500  animate-fade">TEMPORALSECRETS</h1>
+                <h1 className="font-normal  text-base sm:text-3xl text-start  w-full  py-2 sm:p-3 rounded-lg 
+                 transition-all  duration-500  animate-fade">TEMPORALSECRETS</h1>
               </div>
 
               <ExplorarTop></ExplorarTop>

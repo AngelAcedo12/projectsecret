@@ -24,7 +24,7 @@ export default function MenuLater(){
                 <PerfilMenu></PerfilMenu>
                 <Link href="./" className="text-center px-3 hidden sm:block">Amigos</Link>
             </li>
-            <li className="w-full flex flex-row text-center items-center px-1 rounded-lg border border-gray-300 dark:border-gray-700 dark:hover:border-white transition-all duration-150 hover:border-zinc-950 dark:hover:bg-slate-500 hover:bg-slate-300   gap-2">
+            <li className="hidden w-full flex flex-row text-center items-center px-1 rounded-lg border border-gray-300 dark:border-gray-700 dark:hover:border-white transition-all duration-150 hover:border-zinc-950 dark:hover:bg-slate-500 hover:bg-slate-300   gap-2">
                 <DiarioMenu></DiarioMenu>
                 <Link  href="./" className="text-center px-3 hidden sm:block">Diario</Link>
             </li>
