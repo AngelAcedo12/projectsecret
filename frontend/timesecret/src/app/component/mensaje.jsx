@@ -5,10 +5,12 @@ export default function Mensaje() {
 
     return (
         <>
-            <div className="   text-xs sm:text-lg   bg-blend-color-burn    px-5 rounded-md
-             transition-all duration-100     py-3   ">
+            <div className="   text-xs sm:text-lg   dark:border-white border-black bg-blend-color-burn    px-5 
+             transition-all duration-100     py-3 ">
                 <div className="w-full items-center py-1"> 
-                    <h1>Usuario: Manolll</h1>
+                    <h1 className="  bg-clip-text text-transparent sm:text-2xl  
+             bg-[conic-gradient(at_top_left,_var(--tw-gradient-stops))] from-red-400 via-pink-700 to-yellow-200
+                    dark:bg-gradient-to-r dark:from-green-300  dark:via-blue-500 dark:to-purple-600]">Usuario: Manolll</h1>
                 </div>
                 <div >
                     <p className="break-words py-2">

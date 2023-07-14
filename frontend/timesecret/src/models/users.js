@@ -21,7 +21,13 @@ const userSchema = new moongose.Schema(
             require:["public","friends","anonimo"],
             default:"anonimo"
         },
-      
+        amigos:[
+            {
+                username:String,
+                
+            }
+           
+        ]
         
         },
     

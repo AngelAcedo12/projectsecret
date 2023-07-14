@@ -16,7 +16,7 @@ module.exports = {
   },
   plugins: [
     require('tailwindcss-animated'),
-    require('tailwind-scrollbar'),
+    require('tailwind-scrollbar')({ nocompatible: true }),
     require("tw-elements/dist/plugin.cjs"),
   ],
 }
