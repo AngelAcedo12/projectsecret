@@ -4,30 +4,22 @@ import Mensaje from "@/app/component/mensaje";
 import MenuInferior from "@/app/component/menuInferion";
 import MenuLater from "@/app/component/menuLater";
 import { dataForUser } from "@/utils/UtilsProfile";
-import { getCookie } from "cookies-next";
-import jwt_decode from "jwt-decode";
 import { useEffect, useState } from "react";
 
-export default  function Profiler({ params }) { 
-  const token = getCookie("rt-user-login")
 
+export default function Profiler({ params }) {
 
+  
   const [data, setData] = useState();
   const [loading, setLoading] = useState(false);
   const [isEmtpy, setIsEmtpy] = useState(false);
 
   useEffect(() => {
-    const user= jwt_decode(token)
-    
-    setData(dataForUser(user.username).then(res => {
-    
+    setData(dataForUser(params.username).then(res => {
+
       if (res.isEmtpy) {
-        console.log("object");
         setIsEmtpy(true);
-      }else{
-        setIsEmtpy(false)
-        setData(res.resultFInd[0])
-        console.log(data);
+
       }
       setLoading(true)
       return res
@@ -83,7 +75,7 @@ export default  function Profiler({ params }) {
               <div className="w-full sticky top-0 dark:bg-black bg-white backdrop-brightness-50 backdrop-blur-3xl border-black
                dark:border-white  border-b justify-normal flex-col  flex  ">
                 <div className="flex  flex-col w-full  justify-normal text-center  text-sm">
-                  <h1 className="text-2xl" >{data.username}</h1>
+                  <h1 className="text-2xl" >{params.username}</h1>
                   <div className="w-full h-max flex flex-col justify-center items-center text-center">
 
                   </div>

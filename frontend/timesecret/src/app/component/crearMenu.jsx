@@ -5,7 +5,7 @@ export default function CrearMenu(){
     return (
         <>      
         <div>
-            <Link href={"../"} className="items-center content-center  flex justify-center">
+            <Link href={"../createMenssage"} className="items-center content-center  flex justify-center">
             
             <div className="p-2">
             <svg version="1.0" className="dark:fill-white" xmlns="http://www.w3.org/2000/svg"
