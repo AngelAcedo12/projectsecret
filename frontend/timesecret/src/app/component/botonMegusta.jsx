@@ -20,8 +20,8 @@ export default function Megusta(){
     }, [meGusta])
     return (
 
-        <div className="flex gap-3 p-1 py-3">
-            <h1 className="py-2">88</h1>
+        <div className="flex gap-3 p-1 py-1">
+            <h1 className=" text-center items-center align-middle flex">88</h1>
             <button className="hover:bg-slate-300 dark:hover:bg-slate-500 py-2 px-2 rounded-full transition-all duration-150" onClick={click}>{
                 tipMeguta
               }</button>

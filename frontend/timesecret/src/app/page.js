@@ -1,30 +1,10 @@
 "use client"
 import { Analytics } from "@vercel/analytics/react";
-import { useState } from "react";
 import './globals.css';
 
 export default function Home() {
-  let date = new Date();
-  const [timeActual={year:null,mont:null,day:null,h:null,m:null,s:null}, setTime] = useState();
-  const [timeFin={year:2024,mont:"06",day:"0",h:"00",m:"00",s:"00"}, setTimeFin] = useState();
-  const UpdateTime = () => {
-    var ha = date.getHours()
-    var ma = date.getMinutes()
-    var sa = date.getSeconds()
-    var da = date.getDate();
-    ma= date.getMinutes()
-    ha=ha<10 ? "0"+ha:ha
-    ma=ma<10 ? "0"+ma:ma
-    sa=sa<10 ? "0"+sa:sa
-    da=da<10 ? "0"+da:da
-    setTime({year:date.getFullYear(),mont:"0"+(date.getMonth()+1).toString(),day:da,h:ha,m:ma,s:sa});
-    
-  }
-  setTimeout(() => {
-    UpdateTime();
-  }, 150);
-
-
+  
+  
 
 
 
@@ -45,7 +25,7 @@ export default function Home() {
               </div>
 
               
-                <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade-left
+                <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade
                 items-center content-center    max-h-full w-full max-w-full">
                   <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
                   sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 

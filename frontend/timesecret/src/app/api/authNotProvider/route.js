@@ -10,13 +10,14 @@ async function GET (request){
     const params = urlParams.split("=");
     const name= params[1].toString()
     const resultFInd = await users.find({username:name})
-    
+    console.log(resultFInd);
+    console.log(resultFInd[0].username);
     try{
         if(resultFInd.length > 0){
             var token = jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30 , 
-                email: resultFInd.email,
-                username: resultFInd.username,
+                email: resultFInd[0].email,
+                username: resultFInd[0].username,
             },nextConfig.env.SECRET)
             
             let result = {

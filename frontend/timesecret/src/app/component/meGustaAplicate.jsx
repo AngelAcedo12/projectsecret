@@ -6,7 +6,7 @@ export default function MeGustaAplicate() {
     <>
     <div>
     <svg className="dark:fill-white" version="1.0" xmlns="http://www.w3.org/2000/svg"
-        width="24px" height="24px" viewBox="0 0 24.000000 24.000000"
+        width="20px" height="20px" viewBox="0 0 24.000000 24.000000"
         preserveAspectRatio="xMidYMid meet">
 
         <g transform="translate(0.000000,24.000000) scale(0.100000,-0.100000)"
