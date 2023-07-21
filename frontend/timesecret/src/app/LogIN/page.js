@@ -26,7 +26,7 @@ export default function page(){
             document.getElementById("btnReg").disabled=false;
             document.getElementById("btnReg").value="Iniciar sesion";
 
-            router.push("/")
+            router.push("./homePage")
         }else{
             document.getElementById("usernameInput").value="",
             document.getElementById("passwordInput").value="",

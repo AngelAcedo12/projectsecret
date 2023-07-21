@@ -3,26 +3,64 @@ import mongoose from 'mongoose';
 
 const mensajesSchema = new mongoose.Schema(
     {
-        username:{
-            type:String,
-            require:true,
+        id: {
+            type: Number,
+            unique: true,
         },
-        Text:{
-            type:String,
+        username: {
+            type: String,
+            require: true,
         },
-        isPublic:{
-            type:String,
-            require:["public","friends","anonimo"],
+        Text: {
+            type: String,
         },
-        likes:{
-            type:Number,
-        }
+        isPublic: {
+            type: String,
+            require: ["public", "friends", "anonimo"],
+        },
+        likes: {
+            type: Number,
+            default: 0,
+        },
+        temas: [
+            {
+                tema: {
+                    type: String,
 
+                }
+            }
+
+        ],
+        respuestas:[
+
+            {
+                id: {
+                    type: Number,
+                  
+                },
+                username: {
+                    type: String,
+                    require: true,
+                },
+                Text: {
+                    type: String,
+                },
+                isPublic: {
+                    type: String,
+                    require: ["public", "friends", "anonimo"],
+                },
+                likes: {
+                    type: Number,
+                    default: 0,
+                },
+            }
+        ]
     },
     {
-        versionKey:false,
-        Timestamp:true
+
+        versionKey: false,
+        Timestamp: true
     }
 
 )
-export default mongoose.model('mensaje', mensajesSchema);
+export default mongoose.models.mensaje || mongoose.model('mensaje', mensajesSchema);

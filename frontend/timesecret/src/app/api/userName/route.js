@@ -1,9 +1,9 @@
 import dbConnect from "@/config/mongodb";
 import users from "@/models/users";
 
-
+dbConnect()
 async function GET (request){
-    dbConnect()
+
     const url = await request.url;
     const urlParams = new URL(url).searchParams.toString()
     const params = urlParams.split("=");

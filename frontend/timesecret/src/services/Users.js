@@ -1,7 +1,7 @@
 
 
 const uri = "https://temporalsecrets.com/"
-const local = "http://localhost:3001"
+const local = "http://localhost:3000"
 
 async function createUser(data) {
 

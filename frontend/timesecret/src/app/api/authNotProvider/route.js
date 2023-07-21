@@ -2,9 +2,9 @@ import dbConnect from "@/config/mongodb";
 import users from "@/models/users";
 import jwt from "jsonwebtoken";
 import nextConfig from "../../../../next.config";
-
+dbConnect()
 async function GET (request){
-    dbConnect()
+    
     const url = await request.url;
     const urlParams = new URL(url).searchParams.toString()
     const params = urlParams.split("=");
