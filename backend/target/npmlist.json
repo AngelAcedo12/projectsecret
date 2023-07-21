@@ -1,1 +1,0 @@
-{"version":"1.0.0","name":"backend","dependencies":{"cors":{"version":"2.8.5"},"mongoose":{"version":"7.3.0"},"next-auth":{"version":"4.22.1"}}}
