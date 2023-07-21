@@ -25,18 +25,15 @@ export default function Mensaje(params) {
         <>
             <div className="   text-xs sm:text-lg   dark:border-white border-black bg-blend-color-burn    px-5 
              transition-all duration-100     py-3 ">
-                <div className="w-full  flex-row flex gap-4 items-center py-1"> 
-                    <h1 className=" text-xs bg-clip-text text-transparent sm:text-2xl  
-                   bg-gradient-to-r from-green-500  via-blue-500 to-purple-600
-                    dark:bg-gradient-to-r dark:from-green-300  dark:via-blue-500
+                <div className="w-full  flex-row flex gap-4 items-center  py-1"> 
+                    <h1 className=" text-xs text-center text-black dark:text-white sm:text-xl  
+
                      dark:to-purple-600">{username}</h1>
                     <LinkToProfile isPublic={params.isPublic} username={params.username}></LinkToProfile>
                     <a href={`/Profile/${params.username}`}  id="irPerfil" className="disabled:hidden"></a>
-                
             </div>
-               
             <div>
-                    <p className="break-words text-xs text-[0.6rem] py-2">
+                    <p className="break-words text-xs sm:text-lg py-2">
                         {params.text}
                     </p>
                 </div>
