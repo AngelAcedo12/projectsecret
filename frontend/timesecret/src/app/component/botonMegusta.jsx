@@ -1,18 +1,47 @@
+import { incrementLike, obteinOneMessage, removeLike } from "@/services/Mensajes";
 import { useEffect, useState } from "react";
 import MeGustaAplicate from "./meGustaAplicate";
 import MeGustaNoAplicate from "./meGustaNoAplicate";
-export default function Megusta(){
+export default function Megusta(params){
     const [meGusta, setGusta] = useState(false)
     const [tipMeguta, setTipo] = useState(<MeGustaNoAplicate></MeGustaNoAplicate>);
-
-        const click = function(){
-            setGusta(meGusta ? false : true)
+  
+    const [likes, setLikes] = useState()
+    const click = async function(){
+        document.getElementById("btnMegusta").disable=true;
+            try{
+                if(meGusta==false){
+                  
+                    if(await incrementLike(params.id)){
+                        
+                        obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
+                        setGusta(true)
+                        document.getElementById("btnMegusta").disable=false;
+                    }
+                }else{
+                    if(await removeLike(params.id)){
+                        obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
+                        setGusta(false)
+                        document.getElementById("btnMegusta").disable=false;
+                       
+                    }
+                   
+                }
+           
+            }catch(err){
+                console.log(err);
+                setGusta(meGusta)
+            }
+           
            
         }
         useEffect(() => {
+            obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
         if(!meGusta){
+          
             setTipo(<MeGustaNoAplicate ></MeGustaNoAplicate>)
         }else{
+           
             setTipo(<MeGustaAplicate></MeGustaAplicate>)
         }
         
@@ -20,9 +49,9 @@ export default function Megusta(){
     }, [meGusta])
     return (
         
-        <div className="flex gap-3 p-1 py-1">
-            <h1 className=" text-center items-center align-middle flex">88</h1>
-            <button className="hover:bg-slate-300 dark:hover:bg-slate-500 py-2 px-2 rounded-full transition-all duration-150" onClick={click}>{
+        <div className="flex flex-row gap-3 p-1 py-1">
+            <h1 className="    py-2 px-2 w-5 text-center items-center align-middle flex">{likes}</h1>
+            <button id="btnMegusta" className=" w-full  py-2 px-2 rounded-full transition-all duration-150" onClick={click}>{
                 tipMeguta
               }</button>
               

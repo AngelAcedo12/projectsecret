@@ -6,10 +6,10 @@ export default function Inicio(){
 
         <>      
         <div>
-            <Link href={"../"} className="items-center content-center  flex justify-center">
+            <Link href={"/homePage"} className="items-center  content-center flex-row  flex justify-center">
             
             <div className="p-2">
-                    <svg  xmlns="http://www.w3.org/2000/svg" className="dark:fill-white "  viewBox="0 0 50 50" width="30px" height="30px">    
+                    <svg  xmlns="http://www.w3.org/2000/svg" className="dark:fill-white w-[20px] h-[20px] sm:h-[24px]  sm:w-[24px] "  viewBox="0 0 50 50" width="30px" height="30px">    
                     <path d="M 25 1.0507812 C 24.7825 1.0507812 24.565859 1.1197656 24.380859 1.2597656 L 1.3808594 19.210938 C 0.95085938 
                     19.550938 0.8709375 20.179141 1.2109375 20.619141 C 1.5509375 21.049141 2.1791406 21.129062 2.6191406 20.789062 L 
                     4 19.710938 L 4 46 C 4 46.55 4.45 47 5 47 L 19 47 L 19 29 L 31 29 L 31 47 L 45 47 C 45.55 47 46 46.55 46 46 L 46 

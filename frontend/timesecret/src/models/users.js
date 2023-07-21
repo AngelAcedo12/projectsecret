@@ -15,7 +15,7 @@ const userSchema = new moongose.Schema(
             unique:true,
             require:true,
         },
-        tokens:String,
+        
         typePerfil:{
             type:String,
             require:["public","friends","anonimo"],
@@ -27,8 +27,8 @@ const userSchema = new moongose.Schema(
                 
             }
            
-        ]
-        
+        ],
+      
         },
     
 

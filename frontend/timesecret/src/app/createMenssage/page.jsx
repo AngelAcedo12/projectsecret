@@ -1,22 +1,49 @@
 "use client"
+import { createMNG } from "@/services/Mensajes";
+import { getCookie } from "cookies-next";
+import jwt_decode from "jwt-decode";
+import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import { ToastContainer, toast } from "react-toastify";
 
 export default function Page() {
 
-  let user=null;
+  const router = useRouter()
   const [tipoMensaje, setTipo] = useState(true)
   const [characters, setNumbercharacters] = useState(0)
+  const token = getCookie("rt-user-login")
+
+  const submit = async () => {
+  
+  const  user= jwt_decode(token)
+  const tipo = tipoMensaje ? "anonimo" : "public"
+    const data = {
+      username: user.username,
+      Text:document.getElementById("text").value,
+      isPublic:tipo
+    }
+    const load = toast.loading("Enviando...", {className:"dark:bg-slate-500 dark:text-white bg-slate-300"})
  
+    if(await createMNG(data)){
+     
+      toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",render:"Enviado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
+      
+    }else{
+      toast.dismiss(load)
+      toast.error("error",{type:"error", id:load, className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",})
+    }
+  } 
   useEffect(() => {
+    verifyLength()
     if(tipoMensaje==true){
-      document.getElementById("btnAnonimo").classList.add("bg-slate-500")
-      document.getElementById("btnPublico").classList.remove("bg-slate-500")
+      document.getElementById("btnAnonimo").classList.add("bg-slate-300", "dark:bg-slate-500")
+      document.getElementById("btnPublico").classList.remove("bg-slate-300","dark:bg-slate-500")
       document.getElementById("tipeMN").innerHTML="Anónimo"
       
     }
     if(tipoMensaje==false){
-      document.getElementById("btnAnonimo").classList.remove("bg-slate-500")
-      document.getElementById("btnPublico").classList.add("bg-slate-500")
+      document.getElementById("btnAnonimo").classList.remove("bg-slate-300","dark:bg-slate-500")
+      document.getElementById("btnPublico").classList.add("bg-slate-300","dark:bg-slate-500")
       document.getElementById("tipeMN").innerHTML="Público"
     }   
   }, [tipoMensaje])
@@ -29,7 +56,6 @@ export default function Page() {
     }else{
       document.getElementById("btmSubmit").disabled=true;
     }
-  
  }
   return (
     <div className="h-full w-full flex flex-col justify-center">
@@ -43,9 +69,9 @@ export default function Page() {
             </div>
             <span className="w-1/6 justify-end bg-black h-0.5 dark:bg-white"> </span>
             <div className="gap-2 flex w-full py-3 flex-row justify-around">
-              <button onClick={() => {setTipo(true)}} id="btnAnonimo" className="border focus:bg-slate-500 hover:bg-slate-500 border-black w-full transition-colors duration-150
+              <button onClick={() => {setTipo(true)}} id="btnAnonimo" className="border   border-black w-full transition-colors duration-150
                dark:border-white  py-2 sm:py-4 px-6  rounded-lg">Anonimo</button>
-              <button onClick={() => {setTipo(false)}} id="btnPublico" className="border border-black  focus:bg-slate-500 hover:bg-slate-500 w-full transition-colors duration-150
+              <button onClick={() => {setTipo(false)}} id="btnPublico" className="border border-black   w-full transition-colors duration-150
                dark:border-white py-2 sm:py-4 px-6 rounded-lg">Publico</button>
             </div>
           </div>
@@ -55,23 +81,21 @@ export default function Page() {
            </textarea>
 
            <div className="pt-4  w-full "> 
-              <div class="w-20  rounded-full bg-gray-200    mb-4 bg-transparent">
-                  <div class="h-1 rounded-full  bg-gradient-to-l from-sky-400 to-cyan-300 " style={{width: characters+"%"}}></div>
+              <div className="w-20  rounded-full bg-gray-200    mb-4 bg-transparent">
+                  <div className="h-1 rounded-full  bg-gradient-to-l from-sky-400 to-cyan-300 " style={{width: characters+"%"}}></div>
               </div>
            </div> 
           
            <h6  className="text-[0.8em] px-2 py-4 text-red-500">Los mensajes PÚBLICOS seran visibles para todo el mundo</h6>
           <div className="flex flex-row justify-around  gap-3  h-fit">
-            <button className="border  py-2 sm:py-4 px-6 focus:bg-slate-500 hover:bg-slate-500 rounded-lg border-black w-full transition-colors duration-150
+            <button onClick={router.back} className="border  py-2 sm:py-4 px-6 focus:bg-slate-500 hover:bg-slate-500 rounded-lg border-black w-full transition-colors duration-150
                dark:border-white ">Cancelar</button> 
-            <button id="btmSubmit" disabled={true} className="border rounded-lg disabled:border-transparent hover:bg-slate-500  focus:bg-slate-500  py-2 sm:py-4 px-6  border-black w-full transition-colors duration-150
+            <button id="btmSubmit" onClick={submit}   className="border rounded-lg disabled:border-transparent hover:bg-slate-500  focus:bg-slate-500  py-2 sm:py-4 px-6  border-black w-full transition-colors duration-150
                dark:border-white ">Enviar</button>
           </div>
         </div>
-
-
       </div>
-
+      <ToastContainer ></ToastContainer>
     </div>
   )
 }
