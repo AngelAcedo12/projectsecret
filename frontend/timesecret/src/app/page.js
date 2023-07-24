@@ -114,9 +114,7 @@ export default function Home() {
             <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
                   sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
                 duration-300 cursor-pointer" >Instagram</a>
-            <a href="https://twitter.com/temporalsecrets" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
-                  sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
-                duration-300 cursor-pointer">Twitter</a>
+            
           </div>
         </nav>
       </header>
