@@ -28,9 +28,7 @@ const userSchema = new moongose.Schema(
             }
            
         ],
-        MngLikes:[{
-            id:Number,
-        }
+        MngLikes:[
         ]
         },
     

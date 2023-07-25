@@ -7,7 +7,7 @@ async function PUT(request){
             
     const url = await request.url;
     const urlParams = new URL(url).searchParams.toString().split("&")
-    const idM= (urlParams[0].split("="))[1]
+    const idM= Number((urlParams[0].split("="))[1])
     const username= (urlParams[1].split("="))[1]
    
     const data = await mesajes.find({id:idM})

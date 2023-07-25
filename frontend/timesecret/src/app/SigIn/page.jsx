@@ -5,32 +5,36 @@ import { crearUsuario } from "@/utils/RegisterUser";
 import { Analytics } from "@vercel/analytics/react";
 import { useRouter } from "next/navigation";
 
-import 'react-toastify/dist/ReactToastify.css';
+
 export default function page() {
     const router = useRouter()
     const submit = (e) => {
         e.preventDefault();
-        const load = toast.loading("Registrandote...", {className:"dark:bg-slate-500 dark:text-white bg-slate-300"})
+       
         const create = async () => {
+            const load = toast.loading("Registrandote...", {className:"dark:bg-slate-500 dark:text-white bg-slate-300" })
             document.getElementById("btnReg").disabled = true;
             document.getElementById("btnReg").value = "Registrandote...";
         
-            if (await crearUsuario().then(res => {console.log(res);
+            if (await crearUsuario().then(res => {
                 return res 
             })) {
-          
-                toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
-                render:"Ok",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
+              
+                toast.update(load,{ type:"success", autoClose:1500,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
+                render:"Registrado",isLoading:false,progressClassName:"bg-gradient-to-l from-sky-400 to-cyan-300"})
                 setInterval(() => {
                     router.push("../")
                 }, 3000);
             } else {
-        
-                toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
+               
+                toast.update(load,{ type:"error", autoClose:1500,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
                 render:"Usuario ya registrado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
+                document.getElementById("usernameInput").value="",
+                document.getElementById("passwordInput").value="",
+                document.getElementById("emailInput").value="",
                 document.getElementById("btnReg").disabled = false;
                 document.getElementById("btnReg").value = "Registrarse";
-                document.getElementById("btnReg").style.background = "transparent";
+               
             }
 
         }
@@ -98,7 +102,7 @@ export default function page() {
                     </main>
                 </section>
             </main>
-            <ToastContainer autoClose={1000} hideProgressBar={false} ></ToastContainer>
+            <ToastContainer></ToastContainer>
             <Analytics mode='auto'></Analytics>
         </>
     )
