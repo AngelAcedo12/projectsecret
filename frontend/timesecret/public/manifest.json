@@ -17,6 +17,11 @@
       "src": "/favicon.ico",
       "type": "image/x-icon",
       "sizes": "any"
+    },
+    {
+      "src": "/logo.png",
+      "type": "image/png",
+      "sizes": "any"
     }
 
   ]
