@@ -37,7 +37,7 @@ const incrementLike = async (id,username) => {
 }
 const removeLike = async (id,username) => {
     return await fetch(uri+`/api/likeRemove?id=${id}&username=${username}`,{ 
-     method:"PUT",
+    method:"PUT",
     mode:"cors",
     headers:{
         "Content-type": "application/json; charset=UTF-8"
