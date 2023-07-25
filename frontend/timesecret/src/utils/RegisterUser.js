@@ -1,5 +1,4 @@
 import { createUser } from "@/services/Users";
-import { toast } from "react-toastify";
 
 
 const crearUsuario = async () => {
@@ -24,7 +23,7 @@ const crearUsuario = async () => {
 
 
     }
-    toast("Registrandote...", { type: "default",  isLoading: loading, theme: "colored" })
+    
    await resultCreater()
     if(loading==true){
         
