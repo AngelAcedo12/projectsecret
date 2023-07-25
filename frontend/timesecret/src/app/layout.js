@@ -7,7 +7,7 @@ import './globals.css';
 
 const inter = Inter({ subsets: ['latin'] })
 
-export const metadata = {
+const metadata = {
   title: 'TemporalSecrets',
   description: 'Secretos!!!',
   viewport: "width=device-width, initial-scale=1.0",
