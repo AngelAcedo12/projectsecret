@@ -19,12 +19,10 @@ async function PUT(request){
         {username:username},
         {$pull:{MngLikes:{id:idM}}}
     )
-   
-    
     return new Response(JSON.stringify(true))
     }catch(err){
         console.log(err);
-
+        return new Response(JSON.stringify(false))
     }    
 }
 
