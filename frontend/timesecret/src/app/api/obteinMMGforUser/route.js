@@ -4,10 +4,12 @@ dbConnect()
 async function GET(request){
 
     const url = await request.url;
-    const urlParams = new URL(url).searchParams.toString()
-    const params = urlParams.split("=");
+    
+    const urlParams = new URL(url).searchParams.toString().split("&")
+  
+    const params = urlParams[0].split("=");
     const user= params[1].toString()
-    console.log(user);
+  
     try{
         const data=await mesajes.find({username:user})
         return new Response(JSON.stringify(data))

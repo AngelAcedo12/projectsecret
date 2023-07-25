@@ -19,15 +19,10 @@ const crearUsuario = async () => {
             
             loading=true;
         }
-
-
-
     }
     
    await resultCreater()
     if(loading==true){
-        
-        
         return response;
     }else{
       
