@@ -15,7 +15,6 @@ export default function Megusta(params){
                 const user= jwt_decode(token)
               
                 if(meGusta==false){
-                  
                     if(await incrementLike(Number(params.id),user.username)){
                         
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
