@@ -1,6 +1,5 @@
 "use client"
 import { Inter } from 'next/font/google';
-import { useEffect } from 'react';
 import 'react-circular-progressbar/dist/styles.css';
 import 'react-toastify/dist/ReactToastify.css';
 import './globals.css';
@@ -15,20 +14,6 @@ const metadata = {
 }
 
 export default function RootLayout({ children }) {
-  useEffect(() => {
-    if ("serviceWorker" in navigator) {
-      window.addEventListener("load", function () {
-        navigator.serviceWorker.register("/sw.js").then(
-          function (registration) {
-            console.log("Service Worker registration successful with scope: ", registration.scope);
-          },
-          function (err) {
-            console.log("Service Worker registration failed: ", err);
-          }
-        );
-      });
-    }
-  }, [])
 
 
   return (
