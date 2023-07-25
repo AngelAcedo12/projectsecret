@@ -1,11 +1,10 @@
 
 
-    let uri =""
+let uri ="https://temporalsecrets.com/"
 if(process.env.NODE_ENV==="development"){
-     uri = "http://localhost:3000"
-}else{
-     uri = "https://temporalsecrets.com/"
+    uri = "http://localhost:3000"
 }
+
 
 async function createUser(data) {
 

@@ -1,14 +1,14 @@
 
 
-let uri =""
+let uri ="https://temporalsecrets.com/"
 if(process.env.NODE_ENV==="development"){
-     uri = "http://localhost:3000"
-}else{
-     uri = "https://temporalsecrets.com/"
+    uri = "http://localhost:3000"
 }
+
 
 const createMNG = async (data) => {
 
+    
     return await fetch(uri+"/api/mensagesGlobales", {
 
         method:"POST",

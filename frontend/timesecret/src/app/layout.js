@@ -36,7 +36,7 @@ export default function RootLayout({ children }) {
       <head>
         <link rel="manifest" href="/manifest.json" />
         <meta name='google-site-verification' content='mLRkfICmtTSGxbL_jjuiPdWDONj0bj9iSLAV8O242Mc'></meta>
-        <link rel="icon" href='./favicon.ico'></link>
+        <link rel="icon" href='/favicon.ico'></link>
       </head>
       <body className={inter.className}>{children}
       </body>

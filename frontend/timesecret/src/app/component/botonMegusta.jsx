@@ -13,7 +13,7 @@ export default function Megusta(params){
             try{
                 const token = getCookie("rt-user-login")
                 const user= jwt_decode(token)
-               console.log(meGusta);
+              
                 if(meGusta==false){
                   
                     if(await incrementLike(Number(params.id),user.username)){
