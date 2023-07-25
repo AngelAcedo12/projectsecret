@@ -1,8 +1,12 @@
+
 /** @type {import('next').NextConfig} */
+
+
 const nextConfig = {}
 
-module.exports = {
+module.exports = ({
     nextConfig,
+    
     env:{
         DB_URI : "mongodb+srv://angelacedomelli:VXhXcX7F9m9LMluA@temporalsecrets.snpzrpl.mongodb.net/temporalsecrets?retryWrites=true&w=majority",
         API_URI: "https://temporalsecrets-mocha.vercel.app/",
@@ -12,4 +16,4 @@ module.exports = {
         secretGoogle:"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",
     }
   
-}
+})
