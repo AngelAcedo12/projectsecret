@@ -1,10 +1,23 @@
 "use client"
 import { Analytics } from "@vercel/analytics/react";
+import { getCookie } from "cookies-next";
+import jwt_decode from "jwt-decode";
+import { useRouter } from "next/navigation";
 import FlechaIrAPerfil from "./component/fkechaIrAPerfil";
 import './globals.css';
 
 export default function Home() {
+  const router =useRouter()
+  const token = getCookie("rt-user-login")
+  
+    try{
+      user= jwt_decode(token)
+      router.push("./homePage")
+    }catch(err){
+      
+    }
 
+    
   const descubrirLista1 = () => {
     if( document.getElementById("mas1").innerHTML=="+"){
       document.getElementById("parrafo1").classList.replace("hidden", "block")
@@ -101,20 +114,16 @@ export default function Home() {
       <header className="w-full  top-0 bg-white dark:bg-black   ">
         <nav className="flex flex-row  gap-1 justify-between py-3 p-1">
           <div className="justify-start flex w-full items-center  content-center">
-            <h1 className="font-normal text-base sm:text-2xl w-full 
-              
-                   py-3 sm:p-3 
-                  rounded-lg  transition-all 
+            <h1 className="font-normal text-base sm:text-2xl w-full    
+                py-3 sm:p-3 
+                rounded-lg  transition-all 
                 duration-500 cursor-pointer animate-fade ">TEMPORALSECRETS</h1>
           </div>
-
-
           <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade
                 items-center content-center    max-h-full w-full max-w-full">
             <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
                   sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
                 duration-300 cursor-pointer" >Instagram</a>
-            
           </div>
         </nav>
       </header>
@@ -122,22 +131,19 @@ export default function Home() {
 
       <section className="flex  snap-end flex-col h-full text-xs sm:text-base  w-full items-center
        content-center "  >
-
         <main className=" h-full  items-center  animate-fade   w-full flex-col flex " >
-
           <div className="flex flex-col  h-full w-full   justify-center ">
-
             <div className="h-full flex   flex-col items-center justify-center w-full gap-3 transition-all  hover ">
               <h1 className="w-full text-center text-4xl animate-fade "  >¿  ?</h1>
               <p className=" text-center animate-fade  w-full px-2" >Tu tienes el control y tu decides que hacer con tus datos.
                 La red social anonima y temporal. </p>
             </div>
             <div className="text-center flex-col h-full py-4 items-center w-full gap-4 flex justify-center p-7 animate-fade  " >
-
               <h2 className="   ">¡Registrate pulsado el boton de abajo!</h2>
               <a className=" text-lg  text-center items-center content-center border  animate-fade  border-black  dark:border-white
                   flex p-4 px-7 dark:hover:bg-slate-600 hover:bg-slate-300 rounded-lg transition-all  duration-300"
                 href="./SigIn">Registrarse</a>
+              
               <h3>Te avisaremos por correo para que seas el primero en probarla.</h3>
             </div>
             <div className="h-full flex-col flex gap-2  justify-center items-center ">
@@ -149,10 +155,7 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-
         </main>
-
       </section>
       <section className="h-full w-full flex flex-col ">
         <div className="p-2 flex-col flex gap-2  justify-center items-center ">

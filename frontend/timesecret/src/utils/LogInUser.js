@@ -1,10 +1,9 @@
 import { userLogin } from "@/services/Users";
 
 import { setCookie } from "cookies-next";
-import { toast } from "react-toastify";
 import { comparePassword } from "./desencripter";
 const verifyUserLogin = async (datos) => {
-    toast("Verificando datos...", { type: "default",   theme: "colored" })
+    
     let loading = false;
     let passwordEncrypter="";
     let email = ""; 
@@ -12,7 +11,8 @@ const verifyUserLogin = async (datos) => {
     let token = "";
     let resultado = []
     await userLogin(datos.username).then(res =>  {
-       
+       try
+       {
         if (res.isEmtpy==false) {
            
             loading=true;
@@ -34,6 +34,11 @@ const verifyUserLogin = async (datos) => {
           
         }
 
+       }catch(err){
+        
+
+       }
+       
 
 
     }

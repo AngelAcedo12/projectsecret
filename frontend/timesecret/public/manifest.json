@@ -1,0 +1,23 @@
+{
+
+  "background_color": "#ffffff",
+  "description": "TemporalSecrets es una red social de nueva creacion basada en el anonimato con un uso facil y simple.",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "temporalsecrets",
+  "orientation": "portrait",
+  "scope": "/",
+  "short_name": "temporalsecrets",
+  "start_url": "/",
+  "theme_color": "#ffffff",
+  "categories": [],
+
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "type": "image/x-icon",
+      "sizes": "any"
+    }
+
+  ]
+}
