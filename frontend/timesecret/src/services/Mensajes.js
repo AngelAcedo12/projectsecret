@@ -17,21 +17,20 @@ const createMNG = async (data) => {
     
  } 
 
-const incrementLike = async (id) => {
-  
-    return await fetch(uri+`/api/likeMenssages?id=${id}`,{
+const incrementLike = async (id,username) => {
+ 
+    return await fetch(uri+`/api/likeMenssages?id=${id}&username=${username}`,{
         method:"PUT",
         mode:"cors",
         headers:{
             "Content-type": "application/json; charset=UTF-8"
-        
         },
 
-    }).then(res => res.json().then(data => {return data})).catch(err => {console.log(err); return false})
+    }).then(res => res.json().then(data => {console.log(data);return data})).catch(err => {console.log(err); return false})
 
 }
-const removeLike = async (id) => {
-    return await fetch(uri+`/api/likeRemove?id=${id}`,{ 
+const removeLike = async (id,username) => {
+    return await fetch(uri+`/api/likeRemove?id=${id}&username=${username}`,{ 
      method:"PUT",
     mode:"cors",
     headers:{

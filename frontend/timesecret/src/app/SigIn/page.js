@@ -15,22 +15,22 @@ export default function page() {
             document.getElementById("btnReg").disabled = true;
             document.getElementById("btnReg").value = "Registrandote...";
         
-            if (await crearUsuario().then(res => {
+            if (await crearUsuario().then(res => {console.log(res);
                 return res 
             })) {
-                toast.dismiss(load)
+          
                 toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
                 render:"Ok",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
                 setInterval(() => {
                     router.push("../")
-                }, 1500);
+                }, 3000);
             } else {
-                toast.dismiss(load)
+        
+                toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
+                render:"Usuario ya registrado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
                 document.getElementById("btnReg").disabled = false;
                 document.getElementById("btnReg").value = "Registrarse";
                 document.getElementById("btnReg").style.background = "transparent";
-                toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
-                render:"Usuario ya registrado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
             }
 
         }
@@ -42,7 +42,7 @@ export default function page() {
     const verificarContraseñaIsEquals = () => {
         const contraseña1 = document.getElementById("passwordInput")
         const constraseña2 = document.getElementById("passwordInput2")
-        console.log("goas");
+       
         if (constraseña2.value==contraseña1.value){
            
             document.getElementById("msgPassword22").innerHTML=""

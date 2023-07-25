@@ -33,7 +33,7 @@ export default  function Profiler({ params }) {
         setIsEmtpy(false)
         setData(res.resultFInd[0])
         obteinMessageforUser(user.username).then(res => setMensajes(res))
-        console.log(mesanjes);
+       
       }
       setLoading(true)
 
@@ -129,7 +129,7 @@ export default  function Profiler({ params }) {
                           mesanjes.map((mng, index) =>{
 
                             return (
-                                <Mensaje key={index} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
+                                <Mensaje key={index} MensajesLikeados={data.MngLikes} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
                                 likes={mng.likes} 
                                 
                                 ></Mensaje>

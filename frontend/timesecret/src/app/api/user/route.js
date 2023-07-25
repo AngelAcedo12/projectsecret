@@ -7,17 +7,11 @@ dbConnect()
 async function GET (request) {
     
     const usersFInd = await users.find();
-   return new Response(JSON.stringify({usersFInd}))
+    return new Response(JSON.stringify({usersFInd}))
 
-    
-      
-    
-    
 }
 
 async function POST (request) {
-
-
     const body = await request.json();
     let {username,email,password} = body
 
@@ -30,24 +24,12 @@ async function POST (request) {
     }
     try{
         const data = await users.create(nuevoBody)
-        
-       
-   
        return new Response(JSON.stringify(true))
     }catch(err){
         console.log(err)
         return new Response(JSON.stringify(false))
     }
-    
-   
-
-
-
 }
-
-
-
-
 async function PUT  (request){
     const body = await request.json()
     const {username,biografia} = body

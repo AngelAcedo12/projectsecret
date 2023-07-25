@@ -33,7 +33,7 @@ export default  function Profiler({ params }) {
         setIsEmtpy(false)
         setData(res.resultFInd[0])
         obteinMessageforUser(user.username).then(res => setMensajes(res))
-        console.log(mesanjes);
+       
       }
       setLoading(true)
 

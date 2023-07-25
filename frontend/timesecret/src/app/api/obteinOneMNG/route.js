@@ -4,8 +4,9 @@ dbConnect()
 async function GET(request){
 
     const url = await request.url;
-    const urlParams = new URL(url).searchParams.toString()
-    const params = urlParams.split("=");
+    const urlParams = new URL(url).searchParams.toString().split("&")
+
+    const params = urlParams[0].split("=");
     const idM= Number(params[1].toString())    
     try{
         const data=await mesajes.find({id:idM})
@@ -16,6 +17,5 @@ async function GET(request){
         return new Response(JSON.stringify([]))
     }
 }
-
 export { GET };
 

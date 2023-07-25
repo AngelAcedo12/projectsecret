@@ -6,14 +6,16 @@ dbConnect()
 async function GET (request){
     
     const url = await request.url;
-    const urlParams = new URL(url).searchParams.toString()
-    const params = urlParams.split("=");
+    const urlParams = new URL(url).searchParams.toString().split('&')
+    const params = urlParams[0].split("=")
+    
     const name= params[1].toString()
+   
     const resultFInd = await users.find({username:name})
-    console.log(resultFInd);
-    console.log(resultFInd[0].username);
+   
     try{
         if(resultFInd.length > 0){
+            
             var token = jwt.sign({
                 exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30 , 
                 email: resultFInd[0].email,

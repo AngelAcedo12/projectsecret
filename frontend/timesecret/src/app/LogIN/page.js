@@ -24,15 +24,14 @@ export default function page(){
         }
         if(await init()){
             toast.dismiss(load)
-            toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",render:"Ok",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
+            toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",render:"Ok",
+            isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
             document.getElementById("btnReg").disabled=false;
             document.getElementById("btnReg").value="Iniciar sesion";
-
             router.push("./homePage")
         }else{
-           
-            toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",render:"Datos introducidos incorectos",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
-
+            toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",render:"Datos introducidos incorectos",
+            isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
             document.getElementById("usernameInput").value="",
             document.getElementById("passwordInput").value="",
             document.getElementById("emailInput").value="",
