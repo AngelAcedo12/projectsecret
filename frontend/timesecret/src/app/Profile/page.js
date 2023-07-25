@@ -127,9 +127,14 @@ export default  function Profiler({ params }) {
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
                           mesanjes.map((mng, index) =>{
-
+                            let like= false
+                            data.MngLikes.map((elemt)=>{
+                              if(elemt.id===mng.id){
+                                like=true
+                              }
+                            })
                             return (
-                                <Mensaje key={index} MensajesLikeados={data.MngLikes} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
+                                <Mensaje key={index} like={like} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
                                 likes={mng.likes} 
                                 
                                 ></Mensaje>

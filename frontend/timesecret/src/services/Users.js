@@ -1,7 +1,11 @@
 
 
-const uri = "https://temporalsecrets.com/"
-const local = "http://localhost:3000"
+    let uri =""
+if(process.env.NODE_ENV==="development"){
+     uri = "http://localhost:3000"
+}else{
+     uri = "https://temporalsecrets.com/"
+}
 
 async function createUser(data) {
 
@@ -23,7 +27,7 @@ async function createUser(data) {
             "Content-type": "application/json; charset=UTF-8"
         },
 
-    }).then(res => res.json().then(data => {console.log(data);
+    }).then(res => res.json().then(data => {;
 
         return data
     }))
@@ -35,7 +39,7 @@ async function userLogin(username) {
 }
 async function obteinDataForUser(username) {
 
-    return await fetch(`${local}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {
+    return await fetch(`${uri}/api/authNotProvider?name=${username}`).then(res =>res.json().then(data => {
         return data})).catch(err => console.log(err))
     
 }
@@ -43,5 +47,5 @@ async function obteinDataForUser(username) {
 
 export {
     createUser, obteinDataForUser, userLogin
-};
+}
 

@@ -1,6 +1,12 @@
 
-const uri = "https://temporalsecrets.com/"
-const local = "http://localhost:3000"
+
+let uri =""
+if(process.env.NODE_ENV==="development"){
+     uri = "http://localhost:3000"
+}else{
+     uri = "https://temporalsecrets.com/"
+}
+
 const createMNG = async (data) => {
 
     return await fetch(uri+"/api/mensagesGlobales", {

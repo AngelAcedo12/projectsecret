@@ -11,14 +11,14 @@ const metadata = {
   title: 'TemporalSecrets',
   description: 'Secretos!!!',
   viewport: "width=device-width, initial-scale=1.0",
-  
+
 }
 
 export default function RootLayout({ children }) {
   useEffect(() => {
-    if("serviceWorker" in navigator) {
+    if ("serviceWorker" in navigator) {
       window.addEventListener("load", function () {
-       navigator.serviceWorker.register("/sw.js").then(
+        navigator.serviceWorker.register("/sw.js").then(
           function (registration) {
             console.log("Service Worker registration successful with scope: ", registration.scope);
           },
@@ -30,7 +30,7 @@ export default function RootLayout({ children }) {
     }
   }, [])
 
-  
+
   return (
     <html lang="en">
       <head>
@@ -39,13 +39,8 @@ export default function RootLayout({ children }) {
         <link rel="icon" href='./favicon.ico'></link>
       </head>
       <body className={inter.className}>{children}
-      
-
       </body>
-
-     
-      
     </html>
-    
+
   )
 }

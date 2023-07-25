@@ -8,19 +8,12 @@ export default function Mensaje(params) {
     
     const [username , setUsername] = useState("")
     const [data, setData] = useState([])
-    const [userLike, setUserLike] = useState(false)
+    
     useEffect(() => {
-
-        params.MensajesLikeados.map( (like) => {
-            if(like.id===params.id){
-                setUserLike(true)
-            }
-        })
-
-        
+       
+       
         if(params.isPublic=="anonimo"){
          
-            
             setUsername("Anonimo")
         }
         if(params.isPublic=="public"){
@@ -45,7 +38,7 @@ export default function Mensaje(params) {
                     </p>
                 </div>
                 <div className="flex flex-row items-center h-fit text-center">
-                    <Megusta userLike={userLike}  id={params.id}></Megusta>
+                    <Megusta userLike={params.like}  id={params.id}></Megusta>
                 </div>
                 <div className="w-full  border-t border-gray-300 mt-2 flex text-center items-center justify-center">
                     <Link className="w-30 px-2 text-xs sm:text-lg py-1 mt-3 transition-all duration-150 border  hover:border-black dark:hover:border-white dark:hover:bg-slate-500 hover:bg-slate-300 rounded-lg"  href={"../"}>Ver Respuestas</Link>

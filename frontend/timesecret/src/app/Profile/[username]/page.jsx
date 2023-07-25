@@ -17,15 +17,17 @@ export default  function Profiler({ params }) {
   const [loading, setLoading] = useState(false);
   const [isEmtpy, setIsEmtpy] = useState(false);
   const [mesanjes,setMensajes] = useState([])
+  const [dataUserYo, setDataUserYo] = useState()
   const rooter = useRouter()
   let user=null
   useEffect(() => {
     
-    
-    
+    console.log(params);
+
     try{
-     user= jwt_decode(token)
-     dataForUser(user.username).then(res => {
+      user= jwt_decode(token)
+      dataForUser(user.username).then(res=>{setDataUserYo(res.resultFInd[0])})
+      dataForUser(params.username).then(res => {
     try{
       if (res.isEmtpy) {
         setIsEmtpy(true);
@@ -33,7 +35,7 @@ export default  function Profiler({ params }) {
         setIsEmtpy(false)
         setData(res.resultFInd[0])
         obteinMessageforUser(user.username).then(res => setMensajes(res))
-       
+        console.log(mesanjes);
       }
       setLoading(true)
 
@@ -44,7 +46,7 @@ export default  function Profiler({ params }) {
      
     })
     }catch{
-      rooter.push("./LogIN")
+  
     }
     
    
@@ -126,28 +128,25 @@ export default  function Profiler({ params }) {
                          
                           mesanjes.map((mng, index) =>{
                             user=jwt_decode(token)
-                         
-                          if(user.username==mng.username){
+                            let like= false
+                            dataUserYo.MngLikes.map((elemt)=>{
+                              if(elemt.id===mng.id){
+                                like=true
+                              }
+                            })
+                       
                             return (
-                              <Mensaje key={index} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
+                              <Mensaje key={index} like={like}  id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
                               likes={mng.likes} 
                               
                               ></Mensaje>
                             )
-                          }else{
-                            if(mng.isPublic=="public"){
-                              return (
-                                <Mensaje key={index} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
-                                likes={mng.likes} 
-                                
-                                ></Mensaje>
-                            )
-                            }
+                         
                           }
-                          
+                          )
                            
 
-                        })
+                        
                       }
                     </ul>
                   </div>
