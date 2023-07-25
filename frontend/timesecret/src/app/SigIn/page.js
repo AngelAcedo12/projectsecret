@@ -10,23 +10,27 @@ export default function page() {
     const router = useRouter()
     const submit = (e) => {
         e.preventDefault();
+        const load = toast.loading("Registrandote...", {className:"dark:bg-slate-500 dark:text-white bg-slate-300"})
         const create = async () => {
             document.getElementById("btnReg").disabled = true;
             document.getElementById("btnReg").value = "Registrandote...";
         
-        
             if (await crearUsuario().then(res => {
                 return res 
             })) {
-                toast("Gracias por registrarte", { type: "default", autoClose: 1000, });
+                toast.dismiss(load)
+                toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
+                render:"Ok",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
                 setInterval(() => {
                     router.push("../")
                 }, 1500);
             } else {
+                toast.dismiss(load)
                 document.getElementById("btnReg").disabled = false;
                 document.getElementById("btnReg").value = "Registrarse";
                 document.getElementById("btnReg").style.background = "transparent";
-                toast("Ese nombre o email ya estan en uso, por favor introduzca unos nuevos", { type: "error", autoClose: 3000 })
+                toast.update(load,{ type:"error", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
+                render:"Usuario ya registrado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
             }
 
         }

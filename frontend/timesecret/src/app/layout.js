@@ -11,6 +11,7 @@ const metadata = {
   title: 'TemporalSecrets',
   description: 'Secretos!!!',
   viewport: "width=device-width, initial-scale=1.0",
+  
 }
 
 export default function RootLayout({ children }) {
