@@ -15,15 +15,14 @@ export default function Megusta(params){
                 const user= jwt_decode(token)
               
                 if(meGusta==false){
-                    if(await incrementLike(Number(params.id),user.username)){
+                    if(await incrementLike(params.id,user.username)){
                         
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
                         setGusta(true)
                         document.getElementById("btnMegusta").disable=false;
                     }
                 }else{
-                    if(await removeLike(Number(params.id),user.username)){
-                       
+                    if(await removeLike(params.id,user.username)){
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
                         setGusta(false)
                         document.getElementById("btnMegusta").disable=false;
@@ -46,7 +45,6 @@ export default function Megusta(params){
         if(!meGusta){
             setTipo(<MeGustaNoAplicate></MeGustaNoAplicate>)
         }else{
-           
             setTipo(<MeGustaAplicate></MeGustaAplicate>)
         }
         
