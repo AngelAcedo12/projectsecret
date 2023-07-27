@@ -28,10 +28,18 @@ export default function Page() {
      
       toast.update(load,{ type:"success", autoClose:3000,className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",
       render:"Enviado",isLoading:false,progressClassName:" bg-gradient-to-l from-sky-400 to-cyan-300 "})
+      setTimeout(() => {
+        router.back()
+      }, 1000);
+   
       
     }else{
       toast.dismiss(load)
       toast.error("error",{type:"error", id:load, className:"dark:bg-slate-500 dark:text-white bg-slate-300 ",})
+      setTimeout(() => {
+        router.back()
+      }, 1000);
+   
     }
   } 
   useEffect(() => {
