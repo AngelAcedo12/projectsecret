@@ -1,10 +1,5 @@
-[
-  {
-    "relation": ["delegate_permission/common.handle_all_urls"],
-    "target": {
-      "namespace": "android_app",
-      "package_name": "xyz.appmaker.dilqpp",
-      "sha256_cert_fingerprints": ["33:1B:8F:5D:6F:EA:C2:02:03:E7:51:8B:14:05:08:1C:D0:98:19:04:D4:90:EB:CD:A8:A2:1F:B8:36:5F:94:BC"]
-    }
-  }
-]
+[{
+ "relation": ["delegate_permission/common.handle_all_urls"],
+ "target" : { "namespace": "android_app", "package_name": "com.example.temporalsecrets",
+               "sha256_cert_fingerprints": ["FD:E0:1E:21:F3:4E:82:EC:22:4E:6F:53:09:6C:0F:8C:F3:39:6B:A6:B7:93:EC:F7:93:CE:7D:2D:9E:A0:8A:CE"] }
+}]
