@@ -2,7 +2,7 @@ import dbConnect from "@/config/mongodb";
 import mesajes from "@/models/mesajes";
 import users from "@/models/users";
 dbConnect()
-async function GET(request){
+async function PUT(request){
     try{
     const url = await request.url;
     
@@ -27,5 +27,5 @@ async function GET(request){
     }    
 }
 
-export { GET };
+export { PUT };
 
