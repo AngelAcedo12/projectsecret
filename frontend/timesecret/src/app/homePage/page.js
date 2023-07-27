@@ -1,5 +1,6 @@
 "use client"
 import { obteinAllMessage } from "@/services/Mensajes"
+import { dataForUser } from "@/utils/UtilsProfile"
 import { getCookie } from "cookies-next"
 import jwt_decode from "jwt-decode"
 import { useRouter } from "next/navigation"
@@ -13,12 +14,15 @@ export default function page() {
   const router = useRouter()
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(false)
-  const [dataForUser, setDataForUser] = useState([])
+  
+  const [dataUserYo, setDataUserYo] = useState()
   let user = null;
   const token = getCookie("rt-user-login")
+  
   useEffect(() => {
     try {
       user = jwt_decode(token)
+      dataForUser(user.username).then(res=>{setDataUserYo(res.resultFInd[0])})
     } catch (err) {
       router.push("./LogIN")
     }
@@ -96,10 +100,16 @@ export default function page() {
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
                         data.map((mng, index) => {
-
+                         
+                          let like= false
+                            dataUserYo.MngLikes.map((elemt)=>{
+                              if(elemt.id===mng.id){
+                                like=true
+                              }
+                            })
                           return (
-                            <Mensaje key={index} MensajesLikeados={data.MngLikes}  id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username}
-                              likes={mng.likes}
+                            <Mensaje key={index} like={like}  id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username}
+                              likes={mng.likes} 
                             ></Mensaje>
                           )
 

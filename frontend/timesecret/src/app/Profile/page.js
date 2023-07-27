@@ -6,6 +6,7 @@ import { getCookie } from "cookies-next";
 import jwt_decode from "jwt-decode";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import AnonimateProfile from "../component/anonimateProfile";
 import Loader from "../component/loader";
 import Mensaje from "../component/mensaje";
 import MenuTOP from "../component/menuTOP";
@@ -18,11 +19,11 @@ export default  function Profiler({ params }) {
   const [loading, setLoading] = useState(false);
   const [isEmtpy, setIsEmtpy] = useState(false);
   const [mesanjes,setMensajes] = useState([])
+  const [tipoPerfil,setTipo] = useState("anonimo")
+  const [logProfile,setLog] = useState(<AnonimateProfile></AnonimateProfile>)
   const rooter = useRouter()
   useEffect(() => {
-    
     let user=null;
-    
     try{
      user= jwt_decode(token)
      dataForUser(user.username).then(res => {
@@ -36,12 +37,23 @@ export default  function Profiler({ params }) {
        
       }
       setLoading(true)
-
+      
     }catch(err){
+      console.log(err);
       setIsEmtpy(true)
       setLoading(true)
     }
-     
+    try{
+      setTipo(data.typePerfil)
+      if(tipoPerfil=="anonimo"){
+        setLog(<AnonimateProfile></AnonimateProfile>)
+      }else if(tipoPerfil=="public"){
+        setLog(<PublicProfile></PublicProfile>)
+      }
+    }catch(err){
+      console.log(err);
+    }
+   
     })
     }catch{
       rooter.push("./LogIN")
@@ -62,7 +74,6 @@ export default  function Profiler({ params }) {
       <section className="flex flex-row   h-full w-full pb-8 " >
         <MenuLater></MenuLater>
         <Loader></Loader>
-        
       </section>
 
       </>
@@ -115,8 +126,9 @@ export default  function Profiler({ params }) {
                 <div className="flex   items-center  flex-row w-full  justify-center gap-2  text-center px-2 text-sm">
                   <h1 className="sm:text-xl text-base bg-clip-text text-transparent bg-gradient-to-r from-green-300
                    via-blue-500 to-purple-600" >{data.username}</h1>
-                  <PublicProfile></PublicProfile>
-                 
+                   {
+                    logProfile
+                   }
                 </div>
               
               </div>
@@ -127,6 +139,7 @@ export default  function Profiler({ params }) {
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
                           mesanjes.map((mng, index) =>{
+                     
                             let like= false
                             data.MngLikes.map((elemt)=>{
                               if(elemt.id===mng.id){
