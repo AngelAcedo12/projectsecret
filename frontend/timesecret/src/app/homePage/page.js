@@ -22,13 +22,15 @@ export default function page() {
   useEffect(() => {
     try {
       user = jwt_decode(token)
-      dataForUser(user.username).then(res=>{setDataUserYo(res.resultFInd[0])})
+      dataForUser(user.username).then(res=>{setDataUserYo(res.resultFInd[0]); setLoading(true) })
+      obteinAllMessage().then(res => { setData(res) }).
+      catch(err => { setData([]);})
+      
     } catch (err) {
       router.push("./LogIN")
     }
 
-    obteinAllMessage().then(res => { setData(res), setLoading(true) }).
-      catch(err => { setData([]); setLoading(true) })
+   
 
   }, [])
 
@@ -99,9 +101,9 @@ export default function page() {
 
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
-                        data.map((mng, index) => {
+                        data.reverse().map((mng, index) => {
                          
-                          let like= false
+                            let like= false
                             dataUserYo.MngLikes.map((elemt)=>{
                               if(elemt.id===mng.id){
                                 like=true
