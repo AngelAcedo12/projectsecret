@@ -1,5 +1,4 @@
 "use client"
-import Link from "next/link";
 import { useEffect, useState } from "react";
 import Megusta from "./botonMegusta";
 import LinkToProfile from "./linkToProfile";
@@ -40,12 +39,15 @@ export default function Mensaje(params) {
                 <div className="flex flex-row items-center h-fit text-center">
                     <Megusta userLike={params.like}  id={params.id}></Megusta>
                 </div>
-                <div className="w-full  border-t border-gray-300 mt-2 flex text-center items-center justify-center">
-                    <Link className="w-30 px-2 text-xs sm:text-lg py-1 mt-3 transition-all duration-150 border  hover:border-black dark:hover:border-white dark:hover:bg-slate-500 hover:bg-slate-300 rounded-lg"  href={"../"}>Ver Respuestas</Link>
-                </div> 
+               
             </div>
         
         </>
     ) 
-  
+    /**
+     <div className="w-full  hidden  border-t border-gray-300 mt-2  text-center items-center justify-center">
+    <Link className="w-30 px-2 text-xs sm:text-lg py-1 mt-3 transition-all duration-150 border  hover:border-black dark:hover:border-white dark:hover:bg-slate-500 hover:bg-slate-300 rounded-lg"  href={"../"}>Ver Respuestas</Link>
+    </div> 
+     */
+    
 }
