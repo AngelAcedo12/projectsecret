@@ -33,7 +33,7 @@ export default function Mensaje(params) {
                     <a href={`/Profile/${params.username}`}  id="irPerfil" className="disabled:hidden"></a>
             </div>
             <div>
-                    <p className="break-words text-xs sm:text-lg py-2">
+                    <p className="break-words text-xs sm:text-lg py-2 pr-1">
                         {params.text}
                     </p>
                 </div>
