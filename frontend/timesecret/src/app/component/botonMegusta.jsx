@@ -14,7 +14,7 @@ export default function Megusta(params){
                 const token = getCookie("rt-user-login")
                 const user= jwt_decode(token)
               
-                if(meGusta==false){
+                if(meGusta==false && likes<=0){
                     if(await incrementLike(params.id,user.username)){
                         
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
@@ -22,7 +22,8 @@ export default function Megusta(params){
                         document.getElementById("btnMegusta").disable=false;
                     }
                 }else{
-                    if(await removeLike(params.id,user.username)){
+                    
+                    if(await removeLike(params.id,user.username) && likes>=0){
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
                         setGusta(false)
                         document.getElementById("btnMegusta").disable=false;
