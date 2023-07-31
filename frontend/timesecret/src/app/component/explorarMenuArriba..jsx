@@ -4,7 +4,7 @@ export default function ExplorarTop(){
 
     return (
         <>      
-        <div className=" w-fit items-center flex align-middle justify-center">
+        <div className=" hidden w-fit items-center  align-middle justify-center">
             <Link href={"../"} className="items-center cursor-default  content-center h-full flex w-fit justify-end ">
             
             <div className="px-2 hover:bg-slate-300 dark:hover:bg-slate-500 py-2 rounded-full cursor-pointer focus:bg-slate-300">

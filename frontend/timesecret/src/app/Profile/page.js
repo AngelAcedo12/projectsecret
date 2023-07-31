@@ -53,15 +53,10 @@ export default  function Profiler({ params }) {
     }catch(err){
       console.log(err);
     }
-   
     })
     }catch{
       rooter.push("./LogIN")
     }
-    
-   
-
-
   }, [])
 
 
@@ -70,48 +65,26 @@ export default  function Profiler({ params }) {
     return (
       <>
        <MenuTOP></MenuTOP>
-
       <section className="flex flex-row   h-full w-full pb-8 " >
         <MenuLater></MenuLater>
         <Loader></Loader>
       </section>
-
       </>
-      
-  
     )
-
-
-
-
-
-
   } else {
     if (isEmtpy) {
       return (
-      
-        
           <>
            <MenuTOP></MenuTOP>
-            
           <section className="flex flex-row   h-full w-full pb-8 " >
             <MenuLater></MenuLater>
             <div className="h-full w-full items-center flex justify-center">
                 <h1 className="">Usuario no encotrado</h1>
             </div>
-          
-        
           </section>
-    
           </>
-      
-      
-      
       )
     } else {
-
-
-
       return (
         <>
           <MenuTOP></MenuTOP>
@@ -149,7 +122,6 @@ export default  function Profiler({ params }) {
                             return (
                                 <Mensaje key={index} like={like} id={mng.id} text={mng.Text} isPublic={mng.isPublic} username={mng.username} 
                                 likes={mng.likes} 
-                                
                                 ></Mensaje>
                             )
 
