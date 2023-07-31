@@ -14,7 +14,7 @@ export default function Megusta(params){
                 const token = getCookie("rt-user-login")
                 const user= jwt_decode(token)
               
-                if(meGusta==false && likes<=0){
+                if(meGusta==false && likes>=0){
                     if(await incrementLike(params.id,user.username)){
                         
                         obteinOneMessage(params.id).then(res => setLikes(res[0].likes))
