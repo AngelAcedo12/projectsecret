@@ -3,6 +3,7 @@ import { ToastContainer, toast } from "react-toastify";
 
 import { crearUsuario } from "@/utils/RegisterUser";
 import { Analytics } from "@vercel/analytics/react";
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 
@@ -82,8 +83,10 @@ export default function page() {
                   dark:text-white py-1 text-black  transition-all   valid:border-green-500 duration-500 outline-none"  type="email" placeholder="Introduzca tu email"></input>
                         Contraseña
                         <div className="">
-                        <input id="passwordInput" required={true} minLength={6} className=" w-full bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300   border-b-2 border-separate border-spacing-1
-                       dark:text-white py-1 text-black  transition-all  valid:border-green-500 invalid:border-red-600 duration-300 outline-none" autoComplete="none" type="password"
+                        <input id="passwordInput" required={true} minLength={6} className=" w-full bg-transparent placeholder:text-gray-700 dark:placeholder:text-gray-300  
+                         border-b-2 border-separate border-spacing-1
+                       dark:text-white py-1 text-black  transition-all  valid:border-green-500 invalid:border-red-600 duration-300 outline-none" autoComplete="none" 
+                       type="password"
                         placeholder="Introduce la contraseña"></input>
                            
                         </div>
@@ -94,8 +97,12 @@ export default function page() {
                             placeholder="Introduce la contraseña"></input>
                             <h3 id="msgPassword22" className=" w-full  text-red-500"></h3>
                             </div>
-                            <h1 className="text-xs">Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado</h1>
-                            <input disabled={true} id="btnReg" value={"Resgistrarse"} className="p-4 disabled:bg-red-500 disabled:text-white bg-green-500 text-black    hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-300" type="submit"></input>
+                            <h1 className="text-xs">
+                                Tipo de perfil por defefecto es siempre anonimo, esta opcion se puede cambiar el las opciones del perfil una vez registrado
+                            </h1>
+                            <Link href={"/TerminosYPolitica"} className="text-xs w-fit hover:text-blue-300 ">Al registrate aceptas automaticamente nuestros terminos y polita de servicio. Pulsa sobre este texto para revisarlos</Link>
+                            <input disabled={true} id="btnReg" value={"Resgistrarse"} className="p-4 disabled:bg-red-500 disabled:text-white bg-green-500 text-black  
+                            hover:bg-slate-300 dark:hover:bg-slate-600 rounded-lg cursor-pointer   transition-all duration-300" type="submit"></input>
 
                         </form>
 
