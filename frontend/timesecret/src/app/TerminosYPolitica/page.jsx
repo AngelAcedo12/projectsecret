@@ -23,7 +23,8 @@ export default function Page() {
            <h1> 2. Contenido del Usuario:</h1>
             <ul className="p-2 gap-2 flex flex-col">
 
-               <li>  a. Los usuarios son responsables del contenido que publiquen en TemporalSecrets. No toleramos el acoso, la difamación, la violencia o el contenido inapropiado.
+               <li>  a. Los usuarios son responsables del contenido que publiquen en TemporalSecrets. No toleramos el acoso, 
+                  la difamación, la violencia o el contenido inapropiado.
                   Cualquier violación de esta norma puede resultar en la suspensión o eliminación de la cuenta del usuario.
                </li>
                <li>
@@ -54,8 +55,7 @@ export default function Page() {
             <li>
                 a. Todo el contenido y los derechos de 
                 propiedad intelectual relacionados con TemporalSecrets son propiedad de la plataforma. 
-                Los usuarios no pueden reproducir, distribuir o utilizar el contenido de la aplicación sin el consentimiento expreso de TemporalSecrets.
-
+                Los usuarios no pueden reproducir, distribuir o utilizar el contenido de la aplicación sin el consentimiento expreso de TemporalSecrets
             </li>
          
          </ul>
