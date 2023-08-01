@@ -119,7 +119,7 @@ export default function Home() {
                 rounded-lg  transition-all 
                 duration-500 cursor-pointer animate-fade ">TEMPORALSECRETS</h1>
           </div>
-          <div className="grid grid-cols-2 sm:flex sm:justify-around text-center animate-fade
+          <div className="grid grid-cols-1 sm:flex sm:justify-around text-center animate-fade
                 items-center content-center    max-h-full w-full max-w-full">
             <a href="https://www.instagram.com/temporalsecrets/" className="sm:p-3 text-xs sm:text-2xl text-center w-full 
                   sm:w-1/2 rounded-lg sm:hover:w-full sm:dark:hover:bg-slate-600 sm:hover:bg-slate-300  transition-all 
@@ -135,7 +135,7 @@ export default function Home() {
           <div className="flex flex-col  h-full w-full   justify-center ">
             <div className="h-full flex   flex-col items-center justify-center w-full gap-3 transition-all  hover ">
               <h1 className="w-full text-center text-4xl animate-fade "  >¿  ?</h1>
-              <p className=" text-center animate-fade  w-full px-2" >Tu tienes el control y tu decides que hacer con tus datos.
+              <p className="  break-keep  text-center animate-fade  w-full px-2 "  >Tu tienes el control y tu decides que hacer con tus datos.
                 La red social anonima y temporal. </p>
             </div>
             <div className="text-center flex-col h-full py-4 items-center w-full gap-4 flex justify-center p-7 animate-fade  " >
@@ -169,7 +169,7 @@ export default function Home() {
         </div>
         <ol className="p-5  flex-col overflow-y-scroll  scrollbar-thin scrollbar-thumb-black dark:scrollbar-thumb-white justify-evenly list-decimal flwx h-full text-xs sm:text-base ">
           <li className=" gap-2  flex flex-col">
-            <p className="py-2">
+            <p className="py-2 ">
               Somos la red social única en su clase que te ofrece una experiencia en línea completamente diferente. En TemporalSecrets,
               la privacidad y la libertad de expresión son nuestras prioridades fundamentales. En esta plataforma innovadora, los usuarios pueden elegir ser 
               completamente anónimos o revelar su identidad al público, permitiendo una diversidad de interacciones y comunicación sin precedentes.
