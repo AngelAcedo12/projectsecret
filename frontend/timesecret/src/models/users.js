@@ -26,7 +26,6 @@ const userSchema = new moongose.Schema(
                 username:String,
                 
             }
-           
         ],
         MngLikes:[
         ]
