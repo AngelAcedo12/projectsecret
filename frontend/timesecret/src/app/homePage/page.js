@@ -101,7 +101,7 @@ export default function page() {
 
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
-                        data.reverse().map((mng, index) => {
+                        data.map((mng, index) => {
                          
                             let like= false
                             dataUserYo.MngLikes.map((elemt)=>{

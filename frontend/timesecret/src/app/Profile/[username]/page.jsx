@@ -49,7 +49,7 @@ export default function Profiler({ params }) {
         } else {
          
           setData(res.resultFInd[0])
-          obteinMessageforUser(params.username).then(res => setMensajes(res.reverse()))
+          obteinMessageforUser(params.username).then(res => setMensajes(res))
           setIsEmtpy(false)
 
         }

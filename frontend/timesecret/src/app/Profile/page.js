@@ -111,7 +111,7 @@ export default  function Profiler({ params }) {
                     <h1 className="text-center py-3 ">Mensajes</h1>
                     <ul className=" w-full   py-2 flex flex-col  mr-1 mb-10 md:mb-10">
                       {
-                          mesanjes.reverse().map((mng, index) =>{
+                          mesanjes.map((mng, index) =>{
                      
                             let like= false
                             data.MngLikes.map((elemt)=>{
