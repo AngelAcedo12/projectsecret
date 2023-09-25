@@ -6,6 +6,7 @@ dbConnect()
 async function GET(){
     try{
         const data = await mesajes.find()
+        data=data.reverse();
         return new Response(JSON.stringify(data))
     }catch(err){
         console.log(err);
