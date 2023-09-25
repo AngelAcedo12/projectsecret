@@ -1,5 +1,10 @@
-[{
- "relation": ["delegate_permission/common.handle_all_urls"],
- "target" : { "namespace": "android_app", "package_name": "com.example.temporalsecrets",
-               "sha256_cert_fingerprints": ["FD:E0:1E:21:F3:4E:82:EC:22:4E:6F:53:09:6C:0F:8C:F3:39:6B:A6:B7:93:EC:F7:93:CE:7D:2D:9E:A0:8A:CE"] }
-}]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "xyz.appmaker.ymrvjp",
+      "sha256_cert_fingerprints": ["C4:68:3B:91:16:80:09:CC:62:AB:6C:86:42:C4:06:24:69:80:30:8C:17:39:EA:7D:A4:90:EC:76:71:C5:FC:75"]
+    }
+  }
+]
